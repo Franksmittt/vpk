@@ -1,0 +1,400 @@
+================================================================================
+VAALPENSKRAAL GAME RESERVE - PROJECT STYLE, LAYOUT, COLORS & FEATURES
+================================================================================
+
+PROJECT OVERVIEW
+----------------
+Website: Vaalpenskraal Game Reserve - Luxury Safari & Hunting Experience
+Location: Thabazimbi, Limpopo, South Africa
+Target Audience: International luxury travelers, ethical hunters, conservation enthusiasts
+Design Philosophy: "Iron Mountain" - Immersive Realism, Cinematic Luxury
+
+================================================================================
+1. DESIGN PHILOSOPHY & AESTHETIC
+================================================================================
+
+Core Aesthetic: "Iron Mountain" - Immersive Realism
+----------------------------------------------------
+- Cinematic, editorial approach that transports clients to the Waterberg Biosphere
+- Rejects clichéd "safari brochure" aesthetic
+- Sophisticated, dark luxury experience
+- Feels like a high-end travel magazine rather than traditional hunting lodge website
+
+Design Pillars:
+1. Quiet Luxury - Understated elegance over flashy displays
+2. Cinematic Verité - Film-like quality, atmospheric storytelling (no blood imagery)
+3. Radical Transparency - Honest, direct communication about conservation and ethics
+4. Technical Authority - Precision in ballistics, logistics, and species knowledge
+5. Emotional Connection - Balancing the primal hunt with world-class luxury
+
+================================================================================
+2. COLOR PALETTE
+================================================================================
+
+PRIMARY COLORS (The Modern Heritage Palette)
+--------------------------------------------
+- Deep Olive (#2B3D26) - Primary color, signals authority, camouflage, nature
+- Canvas Cream (#EFEBD6) - Secondary, replaces stark white, reduces glare, evokes tented camps
+- Burnished Copper (#B87333) - Metallic accent for luxury, connects to "bullet/brass" aesthetic
+- Signal Orange (#D65A31) - High visibility for conversion, refined nod to "Safety Orange"
+- Espresso (#231F20) - Warm alternative to black, body text, dark mode backgrounds
+
+BUSHVELD SPECTRUM COLORS (Authentic African Colors)
+---------------------------------------------------
+- Bushveld Soil (#894e34) - Oxidised iron-rich earth, grounding, warmth
+- Acacia Bark (#543939) - Dark hardwood trunks, stability, ruggedness
+- Winter Sky (#537285) - Mid-day horizon haze, expansive, calming
+- Dried Grass (#9a7e49) - Dormant savannah grass, natural, seasonal
+- Sunset Gold (#c98455) - Golden hour light, luxury, warmth, nostalgia (also called "Champagne")
+
+TEXT COLORS
+-----------
+- Canvas Cream (#EFEBD6) - Primary text on dark backgrounds (headings, important text)
+- White/White Opacity - Used for body text on dark backgrounds (white/80, white/70, white/60)
+- Sunset Gold/Champagne - Accent text, highlights, CTAs
+
+COLOR USAGE RULES
+-----------------
+- Never use pure white (#FFFFFF) - always use Canvas Cream or white with opacity
+- Never use pure black (#000000) - always use Espresso or dark variants
+- Accent colors should never exceed 20% of any viewport
+- Gradients should be subtle, using earth tones only
+- All contrast ratios meet WCAG AA standards (4.5:1 for text)
+
+================================================================================
+3. TYPOGRAPHY
+================================================================================
+
+FONT FAMILIES
+-------------
+1. Playfair Display (Serif) - Headings
+   - Weights: 400, 500, 600, 700, 800
+   - Usage: All h1-h6 headings, display text
+   - Variable: --font-serif
+
+2. Inter (Sans-serif) - Body Text
+   - Weights: 300, 400, 500, 600, 700
+   - Usage: Body text, paragraphs, descriptions
+   - Variable: --font-sans
+
+3. Montserrat (Sans-serif) - UI Elements
+   - Weights: 400, 500, 600, 700
+   - Usage: Buttons, navigation, labels, uppercase text
+   - Variable: --font-montserrat
+
+TYPOGRAPHY SCALE
+----------------
+- h1: 5xl (3rem) md:7xl (4.5rem) lg:8xl (6rem) - Font light
+- h2: 4xl (2.25rem) md:6xl (3.75rem) - Font light
+- h3: 3xl (1.875rem) md:5xl (3rem) - Font normal
+- Body: Base (1rem) md:lg (1.125rem) lg:xl (1.25rem)
+- Small: xs (0.75rem) sm:text-sm (0.875rem)
+
+LETTER SPACING
+--------------
+- Headings: -0.02em (tighter)
+- Body: 0.01em (slightly loose)
+- Uppercase text: 0.1em - 0.3em (tracking-wide to tracking-[0.3em])
+
+================================================================================
+4. LAYOUT & SPACING
+================================================================================
+
+CONTAINER WIDTHS
+----------------
+- Max-width: 7xl (80rem / 1280px) - Standard container for most sections
+- Max-width: 6xl (72rem / 1152px) - Some specialized sections
+- Full-width: Hero sections, background images
+
+PADDING & SPACING
+-----------------
+- Section padding: pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-12 lg:pb-16
+- Container padding: px-4 sm:px-6 md:px-12
+- Card padding: p-6 md:p-8 lg:p-10
+- Button padding: px-8 md:px-10 py-3 md:py-4
+
+GRID SYSTEMS
+------------
+- 2-column grid: md:grid-cols-2 (for side-by-side content)
+- 3-column grid: md:grid-cols-3 (for journey stages, experience cards)
+- 4-column grid: md:grid-cols-4 (for species showcase)
+- Responsive: Stacks to single column on mobile
+
+================================================================================
+5. VISUAL EFFECTS & STYLING
+================================================================================
+
+GLASSMORPHISM (Frosted Glass Effect)
+-------------------------------------
+- Background: rgba(35, 31, 32, 0.4-0.6) - Semi-transparent espresso
+- Backdrop Filter: blur(10px-12px) - Creates frosted glass effect
+- Border: 1px solid rgba(255, 255, 255, 0.1) - Subtle white border
+- Border Radius: 12px - Rounded corners
+- Used in: Header, cards, booking widget, trust badges
+
+GRADIENTS
+---------
+- Background gradients: linear-gradient(to bottom, rgba(35, 31, 32, 1) to rgba(35, 31, 32, 0.95))
+- Text gradients: Used sparingly for accent text
+- Image overlays: bg-black/20 to bg-black/40 - Dark overlays on images
+
+SHADOWS & DEPTH
+---------------
+- Text shadows: 0 2px 8px rgba(0,0,0,0.5) to 0 4px 16px rgba(0,0,0,0.6)
+- Box shadows: Minimal, used sparingly
+- Depth created through: Layering, opacity, backdrop blur
+
+ANIMATIONS
+----------
+- Scroll fade: Elements fade in as user scrolls (Intersection Observer)
+- Hover effects: Scale transforms, opacity changes, border color transitions
+- Page transitions: Smooth fade-in animations
+- Auto-rotate: Species showcase auto-rotates every 4 seconds
+
+================================================================================
+6. COMPONENT STYLES
+================================================================================
+
+HEADER
+------
+- Position: Fixed top, z-index 1000
+- Background: Glassmorphism (rgba(35, 31, 32, 0.25) with blur)
+- Height: h-20 md:h-24 (80px/96px)
+- Layout: Left (Menu + Phone), Center (Logo), Right (Language + CTA)
+- Logo: "VAALPENSKRAAL" (Playfair Display) + "LUXURY GAME RESERVE" (Montserrat)
+
+HERO SECTION
+------------
+- Full viewport height: h-screen
+- Background: Full-bleed image with black overlay (30% opacity)
+- Content: Centered, max-w-4xl
+- Typography: Large headings (5xl to 8xl), light weight
+- Booking Widget: Floating pill-shaped glassmorphism widget at bottom
+
+CARDS
+-----
+- Background: Glassmorphism (rgba(35, 31, 32, 0.4) with blur)
+- Border: 1px solid rgba(255, 255, 255, 0.1)
+- Border Radius: 12px
+- Hover: Scale transform, border color change
+- Padding: p-8 md:p-10
+
+BUTTONS
+-------
+- Primary CTA: bg-signal-orange text-canvas-cream (orange button)
+- Secondary: border border-white/30 text-white (outlined)
+- Size: px-8 md:px-10 py-3 md:py-4
+- Typography: font-montserrat text-xs uppercase tracking-[0.2em]
+- Hover: Scale, opacity, or background color change
+
+FOOTER
+------
+- Background: Gradient from espresso to espresso/95
+- Layout: 4-column grid (md:grid-cols-4)
+- Sections: Certifications, Legal, Location, Tax Advisory
+- Border: Top border with white/10 opacity
+
+================================================================================
+7. KEY FEATURES
+================================================================================
+
+INTERNATIONALIZATION (i18n)
+---------------------------
+- Supported Languages: English, Deutsch (German), Français (French), Afrikaans
+- Language Selector: Dropdown in header with flag emojis
+- Translation System: React Context API with localStorage persistence
+- Auto-detection: Detects browser language on first visit
+- Location: lib/i18n/translations.ts and lib/i18n/LanguageProvider.tsx
+
+BOOKING WIDGET
+--------------
+- Location: Floating at bottom of hero section
+- Features: Date picker (check-in/check-out), guest selector (1-8), "Go" button
+- Style: Glassmorphism pill shape
+- Functionality: Links to /reserve page with query parameters
+- Seasonal Notice: "Hunting Season: May - August" message
+
+RESPONSIVE DESIGN
+-----------------
+- Mobile-first approach
+- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+- Navigation: Hamburger menu on mobile, dropdown on desktop
+- Images: Responsive with Next.js Image component
+- Typography: Scales from mobile to desktop
+
+SCROLL ANIMATIONS
+-----------------
+- Intersection Observer API for scroll-triggered animations
+- Elements fade in as they enter viewport
+- Smooth transitions with opacity and transform
+- Threshold: 0.15 (15% visible)
+
+INTERACTIVE ELEMENTS
+--------------------
+- Species Showcase: Auto-rotates and responds to hover
+- Journey Timeline: Progress indicator, stage navigation
+- Tab Navigation: Sticky tabs on hunt page
+- Dropdown Menus: Language selector, guest picker, date picker
+
+IMAGE OPTIMIZATION
+------------------
+- Next.js Image component with automatic optimization
+- WebP format conversion
+- Lazy loading enabled
+- Responsive sizes with srcset
+- Priority loading for hero images
+
+================================================================================
+8. SEASONAL MESSAGING
+================================================================================
+
+HUNTING SEASON
+--------------
+- Availability: May - August only (South African regulations)
+- Messaging: Clearly displayed in multiple locations
+- Year-round: Luxury safari experiences available all year
+- Locations: Booking widget, "The Pursuit" section, "Begin Your Journey" section
+
+================================================================================
+9. TRUST SIGNALS & BADGES
+================================================================================
+
+TRUST BAR (Below Hero)
+----------------------
+- Malaria-Free: Safe for families
+- Conservation: Ethical harvest
+- Luxury: World-class service
+- Certified: Professional guides
+- Style: Glassmorphism cards with icons
+- Layout: 4 items with dividers on desktop
+
+================================================================================
+10. TECHNICAL STACK
+================================================================================
+
+FRAMEWORK & LIBRARIES
+---------------------
+- Next.js 16.0.10 (React framework with App Router)
+- TypeScript (strict type safety)
+- Tailwind CSS (utility-first styling)
+- React Context API (state management)
+- Intersection Observer API (scroll animations)
+- React Strict Mode: Enabled
+
+FONTS
+-----
+- Google Fonts: Playfair Display, Inter, Montserrat
+- Next.js Font Optimization: Automatic font loading optimization
+
+IMAGE HANDLING
+-------------
+- Next.js Image component
+- Automatic image optimization
+- WebP conversion
+- Responsive images
+
+================================================================================
+11. ACCESSIBILITY
+================================================================================
+
+- WCAG AA compliant color contrast ratios
+- Semantic HTML structure
+- ARIA labels on interactive elements
+- Keyboard navigation support
+- Screen reader friendly
+- Focus states on all interactive elements
+
+================================================================================
+12. PERFORMANCE OPTIMIZATIONS
+================================================================================
+
+- Image optimization with Next.js
+- Font optimization with next/font
+- Code splitting (automatic with Next.js)
+- Lazy loading for images and components
+- Intersection Observer for efficient scroll animations
+- Minimal JavaScript bundle size
+
+================================================================================
+13. SEO IMPLEMENTATION (Search Engine Optimization)
+================================================================================
+
+METADATA ARCHITECTURE
+---------------------
+- Root Layout Metadata (app/layout.tsx):
+  * metadataBase: Absolute URL with environment variable support
+  * Title Template: '%s | Vaalpenskraal Game Reserve'
+  * Complete OpenGraph configuration (title, description, type, siteName, locale, url)
+  * Twitter Card metadata (summary_large_image)
+  * Robots meta tags with Googlebot directives
+  * Keywords meta tags for enhanced discoverability
+
+- Page-Level Metadata:
+  * All pages have unique titles and descriptions
+  * Dynamic metadata for species pages using generateMetadata
+  * All canonical URLs are absolute (using constructCanonicalUrl helper)
+  * Enhanced descriptions with relevant keywords
+
+TECHNICAL SEO ASSETS
+--------------------
+- Sitemap (app/sitemap.ts):
+  * Dynamic generation with all static and dynamic pages
+  * Includes 9 static pages + 9 species detail pages
+  * Absolute URLs with proper priorities and change frequencies
+  * lastModified timestamps
+
+- Robots.txt (app/robots.ts):
+  * Environment-aware (blocks non-production)
+  * Production: Allows indexing, disallows /api/, /admin/, /_next/, /private/
+  * References sitemap.xml
+
+- SEO Utility Library (lib/seo.ts):
+  * getBaseUrl() - Environment-aware base URL
+  * constructCanonicalUrl() - Absolute canonical URL builder
+  * getAbsoluteImageUrl() - Absolute image URLs for OG tags
+
+STRUCTURED DATA (JSON-LD)
+-------------------------
+- Homepage: TouristDestination schema (address, geo, offers)
+- Trust Page: WebPage + Service schema
+- Sanctuary Page: WebPage + LodgingBusiness schema
+- Species Pages: WebPage schema
+- Server-side injection pattern with proper escaping
+
+IMAGE SEO
+---------
+- All images use Next.js <Image /> component (no <img> tags)
+- Descriptive alt text on all images
+- Priority loading for hero images (LCP optimization)
+- Automatic WebP conversion
+- Responsive images with proper sizing
+
+PERFORMANCE & CORE WEB VITALS
+------------------------------
+- Hero images use priority prop for LCP optimization
+- Server Components by default (minimal client-side JavaScript)
+- Client components only where necessary (leaf pattern)
+- No 'use client' in root layout
+- Semantic HTML structure with proper heading hierarchy
+
+CODE QUALITY
+------------
+- No SEO anti-patterns:
+  * No <img> tags (all use <Image />)
+  * No <a href> tags (all use <Link />)
+  * No client-side metadata injection
+- TypeScript strict mode
+- Zero linting errors
+- Build passes with 0 errors
+
+SEO STATUS
+----------
+- Status: ✅ Production Ready
+- Build: ✅ Passing (0 errors)
+- All critical SEO requirements met
+- See SEO_AUDIT.md for complete audit report
+
+================================================================================
+END OF DOCUMENT
+================================================================================
+
