@@ -5,7 +5,7 @@ export interface SpeciesData {
   name: string;
   scientificName: string;
   nickname: string;
-  category: "spiral" | "plains" | "desert" | "small";
+  category: "spiral" | "plains" | "desert" | "small" | "dangerous";
   investment: string;
   
   // Physical Specifications
@@ -777,6 +777,79 @@ export const speciesDatabase: SpeciesData[] = [
     },
     description: "While often a 'target of opportunity,' highly sought after for tusks and exceptional meat quality. The taxonomic outlier - a suid solving savanna problems with unique evolutionary innovations.",
     conservationNarrative: "Supports sustainable harvest of suid species and research into hindgut fermentation adaptations.",
+  },
+  {
+    id: "buffalo",
+    name: "Cape Buffalo",
+    scientificName: "Syncerus caffer caffer",
+    nickname: "The Stronghold",
+    category: "dangerous",
+    investment: "$12,000",
+    biometrics: {
+      weight: { male: "500-900 kg (1,100-2,000 lb)", female: "400-700 kg (880-1,540 lb)" },
+      height: { male: "130-150 cm (51-59 in)", female: "120-140 cm (47-55 in)" },
+    },
+    biology: {
+      digestiveType: "ruminant",
+      feedingGuild: "grazer",
+      primaryForage: "Grass",
+      muzzleShape: "Broad",
+      waterDependence: "Water-dependent, requires daily access",
+      habitat: "Savanna, woodland, floodplains",
+    },
+    morphology: {
+      cranial: "Massive head with broad muzzle for bulk grazing. Horns form a continuous boss across the forehead, creating a protective shield.",
+      dentition: "Hypsodont teeth adapted for abrasive grass. Large molars for grinding coarse vegetation.",
+      skeletal: "Massive, robust skeleton designed to support immense weight. Powerful neck muscles support the heavy head and horns.",
+      hoof: {
+        dimensions: "12-15 cm",
+        shape: "Large, rounded",
+        distinctive: "Massive tracks, often confused with domestic cattle but larger and more rounded. Heavy indentation in soil.",
+        substrate: "Diverse - adapted for various substrates",
+      },
+      specialAdaptations: [
+        "Continuous horn boss provides protection during head-to-head combat",
+        "Thick hide (up to 2cm) provides natural armor",
+        "Exceptional memory - will remember and seek revenge on threats",
+        "Formidable defensive capabilities - one of the Big Five",
+      ],
+    },
+    behavior: {
+      social: "Form large herds (up to 1,000+). Old bulls often solitary or in small bachelor groups (Dagga Boys).",
+      feeding: "Bulk grazers, feeding primarily on grass. Require daily access to water.",
+      defense: "Extremely dangerous when wounded or threatened. Will charge and pursue threats. Known for seeking revenge.",
+      reproduction: "Breeding season varies by region. Cows give birth to single calf after 11-12 month gestation.",
+      uniqueBehaviors: [
+        "The 'Dagga Boy' - old bulls that form bachelor groups, often more aggressive",
+        "Wallowing behavior - coat themselves in mud for protection and cooling",
+        "Exceptional memory - recognize and remember threats",
+        "Defensive formations - herd will form defensive circle around calves",
+      ],
+    },
+    tracking: {
+      trackMorphology: "Massive, rounded tracks. Larger than domestic cattle. Heavy indentation in soil. Often confused with Eland but broader and more rounded.",
+      trackDimensions: "12-15 cm",
+      gaitSignature: "Heavy, deliberate steps. Tracks show deep indentation. Herd tracks can churn ground into mud.",
+      behavioralSpoor: "Wallowing sites - mud holes with heavy use. Dung piles in feeding areas. Trampled grass from herd movement.",
+      strategy: "Track age carefully. Fresh tracks indicate recent presence. Be extremely cautious - wounded buffalo are among the most dangerous animals in Africa. Never approach wounded animal without backup.",
+      dangerLevel: "EXTREME - One of the Big Five. Wounded buffalo will actively seek and charge threats. Requires experienced PH and backup.",
+      keySigns: [
+        "Massive, rounded tracks larger than cattle",
+        "Wallowing sites with heavy use",
+        "Dung piles in feeding areas",
+        "Trampled grass from herd movement",
+        "Old bulls (Dagga Boys) often more aggressive",
+      ],
+    },
+    hunting: {
+      caliber: ".375 H&H Magnum minimum, .416 Rigby, .458 Lott recommended. Solid bullets mandatory.",
+      shotPlacement: "Heart/lung shot through shoulder. Brain shot only for experienced hunters. Never take frontal shot.",
+      trophy: "Horn spread and boss size. SCI Gold: 110\"",
+      meat: "Excellent quality. Lean, flavorful. Requires proper aging. Premium game meat.",
+      difficulty: "EXTREME - Requires experienced Professional Hunter. One of the most dangerous animals in Africa.",
+    },
+    description: "The apex of African dangerous game hunting. Known as 'The Black Death' for good reason. These massive bovines are intelligent, have exceptional memory, and will actively seek revenge when wounded. The hunt demands the highest level of respect, preparation, and ethical conduct.",
+    conservationNarrative: "The Stronghold Initiative - Supports conservation of Cape Buffalo populations, habitat preservation, and anti-poaching efforts. Management of post-reproductive bulls contributes to herd health and genetic diversity.",
   },
 ];
 

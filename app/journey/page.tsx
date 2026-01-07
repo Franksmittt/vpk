@@ -127,7 +127,7 @@ export default function JourneyPage() {
             </div>
             <div className="mt-8 md:mt-12 opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
               <p className="text-white/70 font-montserrat text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light mb-4">
-                Every interaction—from the moment you land at O.R. Tambo to the final processing of your harvest—is choreographed with military precision. This is not merely a hunt. This is a transformation.
+                Every interaction, from the moment you land at O.R. Tambo to the final processing of your harvest, is choreographed with military precision. This is not merely a hunt. This is a transformation.
               </p>
               <p className="text-white/50 font-montserrat text-xs uppercase tracking-[0.15em] max-w-2xl mx-auto leading-relaxed font-light">
                 A SANCTUARY OF SILENCE • CONSERVATION INVESTMENT • EXCLUSIVE EXPERIENCE
@@ -327,19 +327,19 @@ export default function JourneyPage() {
                   </p>
                     <ul className="space-y-3 text-white/60 font-montserrat text-sm font-light">
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Dedicated permit officer meets you at the aircraft gate</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Bypass standard immigration queues via diplomatic channels</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Direct escort to SAPS permit office</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Pre-printed SAPS 520 form ready for signature</span>
                     </li>
                   </ul>
@@ -452,23 +452,23 @@ export default function JourneyPage() {
                   </p>
                     <ul className="space-y-3 text-white/60 font-montserrat text-sm font-light">
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Luxury SUV (Toyota Land Cruiser Prado, Mercedes V-Class)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Wi-Fi, refreshments, and field guide tablet</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Cold towels, artisanal snacks (biltong, dried mango)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Curated playlist of South African music</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Host driver points out vegetation transitions</span>
                     </li>
                   </ul>
@@ -521,23 +521,23 @@ export default function JourneyPage() {
                   </p>
                     <ul className="space-y-3 text-white/60 font-montserrat text-sm font-light">
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>45 to 50 minutes flight time</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Geological reveal of the Iron Mountains</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Pilot highlights Kransberg and Ysterberg (Iron Mountain)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Private helipad with immediate wildlife view</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Direct insertion into the wilderness</span>
                     </li>
                   </ul>
@@ -643,16 +643,16 @@ export default function JourneyPage() {
                 </h3>
                 <ul className="space-y-4 text-white/70 font-montserrat text-sm md:text-base font-light">
                   <li className="flex items-start gap-3">
-                    <span className="text-champagne mt-1">—</span>
+                    <span className="text-champagne mt-1">•</span>
                     <span><strong className="text-white">Scented Towel:</strong> Infused with lemongrass or indigenous Buchu to immediately engage the olfactory sense and trigger relaxation</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-champagne mt-1">—</span>
-                    <span><strong className="text-white">Welcome Drink:</strong> Signature "Dawa" (vodka, lime, and local honey) or house-made iced tea with Rooibos and wild herbs</span>
+                    <span className="text-champagne mt-1">•</span>
+                    <span><strong className="text-white">Welcome Drink:</strong> Signature Dawa (vodka, lime, and local honey) or house-made iced tea with Rooibos and wild herbs</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-champagne mt-1">—</span>
-                    <span><strong className="text-white">Seamless Check-in:</strong> All formalities completed while seated—no standing at a counter</span>
+                    <span className="text-champagne mt-1">•</span>
+                    <span><strong className="text-white">Seamless Check-in:</strong> All formalities completed while seated. No standing at a counter</span>
                   </li>
                 </ul>
               </div>
@@ -732,7 +732,7 @@ export default function JourneyPage() {
 
           <div className="scroll-fade mb-6 md:mb-8">
             <p className="text-base md:text-lg lg:text-xl leading-relaxed text-white/80 font-montserrat font-light max-w-3xl">
-              Food is a primary driver of luxury travel. For a hunting lodge, the culinary program must navigate the delicate balance between the "hunter's feast" and refined gastronomy. The "Field to Fork" philosophy is the ethical bridge—demonstrating that the animal harvested is respected and utilized.
+              Food is a primary driver of luxury travel. For a hunting lodge, the culinary program must navigate the delicate balance between the hunter's feast and refined gastronomy. The Field to Fork philosophy is the ethical bridge, demonstrating that the animal harvested is respected and utilized.
             </p>
           </div>
 
@@ -810,19 +810,19 @@ export default function JourneyPage() {
                   </p>
                     <ul className="space-y-3 text-white/60 font-montserrat text-sm font-light">
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Central fire with Leadwood logs (burns hot and long)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Lanterns, starlight, and sounds of the night</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Traditional dishes: Potjiekos, Boerewors, Malva Pudding</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Professional Hunter recounts the day's events</span>
                     </li>
                   </ul>
@@ -847,19 +847,19 @@ export default function JourneyPage() {
                 </p>
                     <ul className="space-y-3 text-white/60 font-montserrat text-sm font-light">
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
-                    <span>The Southern Cross (Crux)—navigational anchor</span>
+                    <span className="text-clay mt-1">•</span>
+                    <span>The Southern Cross (Crux). Navigational anchor</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
-                    <span>The Milky Way—galactic core directly overhead in winter</span>
+                    <span className="text-clay mt-1">•</span>
+                    <span>The Milky Way. Galactic core directly overhead in winter</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
-                    <span>Orion—the Hunter, inverted in the Southern Hemisphere</span>
+                    <span className="text-clay mt-1">•</span>
+                    <span>Orion, the Hunter, inverted in the Southern Hemisphere</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>High-quality telescope and trained guides</span>
                   </li>
                 </ul>
@@ -944,15 +944,15 @@ export default function JourneyPage() {
                   </h3>
                     <ul className="space-y-3 text-white/60 font-montserrat text-sm font-light">
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Gentle knock at 5:00 AM with coffee and Ouma Rusks</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
-                      <span>The "Blue Hour"—cold, crisp air and dawn chorus</span>
+                      <span className="text-champagne mt-1">•</span>
+                      <span>The Blue Hour. Cold, crisp air and dawn chorus</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Layered clothing for thermal shock (5°C to 25°C range)</span>
                     </li>
                   </ul>
@@ -974,27 +974,27 @@ export default function JourneyPage() {
                 </h3>
                     <ul className="space-y-3 text-white/60 font-montserrat text-sm font-light">
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>Heavy wool blankets and hot water bottles</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>Upgraded suspension for corrugated roads</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>Secure storage for rifles and optics</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>Cooler box with refreshments and snacks</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>High-quality binoculars (Swarovski/Leica)</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>Satellite communication (Garmin inReach)</span>
                   </li>
                 </ul>
@@ -1032,23 +1032,23 @@ export default function JourneyPage() {
                     The Walk & Stalk Ethos
                   </h3>
                   <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed mb-4 font-light">
-                    "Vehicles are for transport; boots are for hunting." The hunt begins when the boots hit the red dust.
+                    Vehicles are for transport. Boots are for hunting. The hunt begins when the boots hit the red dust.
                   </p>
                     <ul className="space-y-3 text-white/60 font-montserrat text-sm font-light">
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
-                      <span>Fair Chase emphasis—ethical and athletic</span>
+                      <span className="text-champagne mt-1">•</span>
+                      <span>Fair Chase emphasis. Ethical and athletic</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Soft-soled boots (Courteney) for silent movement</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>The tracker reads displacement of sand, age of dung, confusion tracks</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Learning to read the landscape</span>
                     </li>
                   </ul>
@@ -1136,7 +1136,7 @@ export default function JourneyPage() {
                   imageAlt: "Respectful field dressing in natural environment",
                   items: [
                     "Animal treated with dignity",
-                    "Clean photos—no blood, tongue tucked in",
+                    "Clean photos. No blood, tongue tucked in",
                     "Natural environment background",
                     "Recovery team handles loading",
                     "Celebratory stop for refreshment"
@@ -1209,7 +1209,7 @@ export default function JourneyPage() {
                       <ul className="space-y-2 text-white/60 font-montserrat text-sm font-light">
                         {section.items.map((item, itemIdx) => (
                           <li key={itemIdx} className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>{item}</span>
                           </li>
                         ))}
@@ -1233,15 +1233,15 @@ export default function JourneyPage() {
                   <h4 className="text-cream font-heading text-base mb-3 font-light">Activities</h4>
                   <ul className="space-y-2 text-silver/60 font-body text-sm">
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Spa treatments (mobile or in-room)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Marakele National Park (Cape Vultures)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Veterinary darting procedures</span>
                     </li>
                   </ul>
@@ -1250,15 +1250,15 @@ export default function JourneyPage() {
                   <h4 className="text-cream font-heading text-base mb-3 font-light">The Sanctuary</h4>
                   <ul className="space-y-2 text-silver/60 font-body text-sm">
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>High-speed Wi-Fi</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Library and pool</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Exceptional food service</span>
                     </li>
                   </ul>
@@ -1307,7 +1307,7 @@ export default function JourneyPage() {
 
           <div className="scroll-fade mb-6 md:mb-8">
             <p className="text-base md:text-lg lg:text-xl leading-relaxed text-white/80 font-montserrat font-light max-w-3xl">
-              The journey does not end when you leave. The red dust of Thabazimbi stays with you—in your boots, in your memories, and in the legacy of conservation you've contributed to. The trophy, when it arrives, is not merely a mount; it is a connection to the Iron Mountain, a reminder of the deep time you walked upon.
+              The journey does not end when you leave. The red dust of Thabazimbi stays with you, in your boots, in your memories, and in the legacy of conservation you've contributed to. The trophy, when it arrives, is not merely a mount. It is a connection to the Iron Mountain, a reminder of the deep time you walked upon.
             </p>
           </div>
 
@@ -1352,19 +1352,19 @@ export default function JourneyPage() {
                     The Legacy
                   </h3>
                   <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed mb-4 font-light">
-                    Your conservation investment continues to work long after you've returned home. The meat donated to local communities, the snares removed, the kilometers patrolled—these are the real trophies.
+                    Your conservation investment continues to work long after you've returned home. The meat donated to local communities, the snares removed, the kilometers patrolled. These are the real trophies.
                   </p>
                     <ul className="space-y-3 text-white/60 font-montserrat text-sm font-light">
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Ongoing impact dashboard updates</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Community development projects</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Conservation metrics tracking</span>
                     </li>
                   </ul>
@@ -1412,19 +1412,19 @@ export default function JourneyPage() {
                     The Return
                   </h3>
                   <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed mb-4 font-light">
-                    Many guests return annually, making this a recurring pilgrimage. The relationship built during your stay extends beyond the hunt—it becomes a connection to place, to conservation, and to the Iron Mountain itself.
+                    Many guests return annually, making this a recurring pilgrimage. The relationship built during your stay extends beyond the hunt. It becomes a connection to place, to conservation, and to the Iron Mountain itself.
                   </p>
                     <ul className="space-y-3 text-white/60 font-montserrat text-sm font-light">
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Priority booking for returning guests</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Annual conservation updates</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <span className="text-champagne mt-1">—</span>
+                      <span className="text-champagne mt-1">•</span>
                       <span>Invitation to exclusive events</span>
                     </li>
                   </ul>

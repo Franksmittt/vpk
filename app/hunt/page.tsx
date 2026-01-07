@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { speciesDatabase } from "@/lib/speciesData";
 
 export default function HuntPage() {
@@ -42,10 +43,25 @@ export default function HuntPage() {
     };
   }, [isMounted]);
 
+  // Function to get hunt card image for species
+  const getHuntCardImage = (speciesId: string): string => {
+    const imageMap: { [key: string]: string } = {
+      wildebeest: "/images/wildebeest-hunt-card.jpg",
+      impala: "/images/impala-hunt-card.jpg",
+      blesbok: "/images/blesbok-hunt-card.jpg",
+      hartebeest: "/images/hartebeest-hunt-card.jpg",
+      kudu: "/images/kudu-hunt-card.jpg",
+      eland: "/images/eland-hunt-card.jpg",
+      bushbuck: "/images/bushbuck-hunt-card.jpg",
+      buffalo: "/images/buffalo-hunt-card.jpg",
+    };
+    return imageMap[speciesId] || "";
+  };
+
   // Filter species by category
   const plainsGame = speciesDatabase.filter((s) => s.category === "plains");
   const spiralHorn = speciesDatabase.filter((s) => s.category === "spiral");
-  const dangerousGame = speciesDatabase.filter((s) => s.id === "buffalo" || s.id === "leopard" || s.id === "lion");
+  const dangerousGame = speciesDatabase.filter((s) => s.category === "dangerous");
 
   return (
     <div className="min-h-screen">
@@ -161,19 +177,19 @@ export default function HuntPage() {
                       <h4 className="text-cream font-heading text-base mb-3 font-light">The Process</h4>
                       <ul className="space-y-2 text-silver/60 font-body text-sm">
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Early morning departure (5:00 AM) during the Blue Hour</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Vehicle transport to the hunting area</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Track identification and age assessment</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Silent stalk on foot with wind awareness</span>
                         </li>
                       </ul>
@@ -182,19 +198,19 @@ export default function HuntPage() {
                       <h4 className="text-cream font-heading text-base mb-3 font-light">The Terrain</h4>
                       <ul className="space-y-2 text-silver/60 font-body text-sm">
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Iron Stone ridges (demanding, technical)</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Thick bushveld (close-range encounters)</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Open valleys (long-range opportunities)</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Waterholes (ambush and observation)</span>
                         </li>
                       </ul>
@@ -235,18 +251,28 @@ export default function HuntPage() {
                   >
                     <div className="border border-clay/20 flex flex-col h-full hover:border-clay/40 transition-all duration-500">
                       <div className="relative aspect-[4/3] bg-gradient-to-br from-clay/20 via-soil/30 to-charcoal overflow-hidden border-b border-clay/20">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="w-12 h-12 border-2 border-clay/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                              <svg className="w-6 h-6 text-clay/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
+                        {getHuntCardImage(species.id) ? (
+                          <Image
+                            src={getHuntCardImage(species.id)}
+                            alt={species.name}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-center">
+                              <div className="w-12 h-12 border-2 border-clay/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg className="w-6 h-6 text-clay/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                              </div>
+                              <p className="text-clay/40 font-body text-[10px] uppercase tracking-[0.15em] font-light">
+                                {species.name}
+                              </p>
                             </div>
-                            <p className="text-clay/40 font-body text-[10px] uppercase tracking-[0.15em] font-light">
-                              {species.name}
-                            </p>
                           </div>
-                        </div>
+                        )}
                       </div>
                       <div className="p-8 md:p-10 flex-1 flex flex-col">
                         <div className="w-16 h-px bg-clay/30 mb-4"></div>
@@ -306,18 +332,28 @@ export default function HuntPage() {
                   >
                     <div className="border border-clay/20 flex flex-col h-full hover:border-clay/40 transition-all duration-500">
                       <div className="relative aspect-[4/3] bg-gradient-to-br from-clay/20 via-soil/30 to-charcoal overflow-hidden border-b border-clay/20">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="w-12 h-12 border-2 border-clay/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                              <svg className="w-6 h-6 text-clay/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
+                        {getHuntCardImage(species.id) ? (
+                          <Image
+                            src={getHuntCardImage(species.id)}
+                            alt={species.name}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-center">
+                              <div className="w-12 h-12 border-2 border-clay/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg className="w-6 h-6 text-clay/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                              </div>
+                              <p className="text-clay/40 font-body text-[10px] uppercase tracking-[0.15em] font-light">
+                                {species.name}
+                              </p>
                             </div>
-                            <p className="text-clay/40 font-body text-[10px] uppercase tracking-[0.15em] font-light">
-                              {species.name}
-                            </p>
                           </div>
-                        </div>
+                        )}
                       </div>
                       <div className="p-8 md:p-10 flex-1 flex flex-col">
                         <div className="w-16 h-px bg-clay/30 mb-4"></div>
@@ -377,18 +413,28 @@ export default function HuntPage() {
                   >
                     <div className="border border-clay/20 flex flex-col h-full hover:border-clay/40 transition-all duration-500">
                       <div className="relative aspect-[4/3] bg-gradient-to-br from-soil/30 via-clay/20 to-charcoal overflow-hidden border-b border-clay/20">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="w-12 h-12 border-2 border-clay/30 rounded-full flex items-center justify-center mx-auto mb-3">
-                              <svg className="w-6 h-6 text-clay/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
+                        {getHuntCardImage(species.id) ? (
+                          <Image
+                            src={getHuntCardImage(species.id)}
+                            alt={species.name}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="text-center">
+                              <div className="w-12 h-12 border-2 border-clay/30 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <svg className="w-6 h-6 text-clay/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                              </div>
+                              <p className="text-clay/40 font-body text-[10px] uppercase tracking-[0.15em] font-light">
+                                {species.name}
+                              </p>
                             </div>
-                            <p className="text-clay/40 font-body text-[10px] uppercase tracking-[0.15em] font-light">
-                              {species.name}
-                    </p>
-                  </div>
-                        </div>
+                          </div>
+                        )}
                       </div>
                       <div className="p-8 md:p-10 flex-1 flex flex-col">
                         <div className="w-16 h-px bg-clay/30 mb-4"></div>
@@ -525,16 +571,16 @@ export default function HuntPage() {
                       </p>
                       <ul className="space-y-2 text-silver/60 font-body text-sm">
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span><strong className="text-cream">Broadside:</strong> Lower third, behind shoulder</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span><strong className="text-cream">Quartering Away:</strong> Follow the line of the front leg</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
-                          <span><strong className="text-cream">Quartering To:</strong> Avoid—wait for better angle</span>
+                          <span className="text-clay mt-1">•</span>
+                          <span><strong className="text-cream">Quartering To:</strong> Avoid. Wait for better angle</span>
                         </li>
                       </ul>
                     </div>
@@ -545,15 +591,15 @@ export default function HuntPage() {
                       </p>
                       <ul className="space-y-2 text-silver/60 font-body text-sm">
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Always verify backstop before shooting</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Account for wind in open valleys</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Practice at elevation before arrival</span>
                         </li>
                       </ul>
@@ -588,20 +634,20 @@ export default function HuntPage() {
                       Footwear
                   </h3>
                     <p className="text-silver/70 font-body text-sm md:text-base leading-relaxed mb-4">
-                      The Iron Stone is unforgiving. Hard soles act like cymbals on the rock, ruining the stalk. <strong className="text-cream">Soft-soled boots are mandatory.</strong> Courteney Boots are the gold standard—their soft, flexible soles allow silent movement over the iron formations.
+                      The Iron Stone is unforgiving. Hard soles act like cymbals on the rock, ruining the stalk. <strong className="text-cream">Soft-soled boots are mandatory.</strong> Courteney Boots are the gold standard. Their soft, flexible soles allow silent movement over the iron formations.
                     </p>
                     <ul className="space-y-2 text-silver/60 font-body text-sm">
                       <li className="flex items-start gap-3">
-                        <span className="text-clay mt-1">—</span>
+                        <span className="text-clay mt-1">•</span>
                         <span><strong className="text-cream">Recommended:</strong> Courteney Boots (soft sole, ankle support)</span>
                       </li>
                     <li className="flex items-start gap-3">
-                        <span className="text-clay mt-1">—</span>
+                        <span className="text-clay mt-1">•</span>
                         <span><strong className="text-cream">Avoid:</strong> Hard-soled hiking boots, steel-toed boots</span>
                     </li>
                     <li className="flex items-start gap-3">
-                        <span className="text-clay mt-1">—</span>
-                        <span>Break in boots before arrival—blisters end hunts</span>
+                        <span className="text-clay mt-1">•</span>
+                        <span>Break in boots before arrival. Blisters end hunts</span>
                       </li>
                     </ul>
                   </div>
@@ -613,22 +659,22 @@ export default function HuntPage() {
                       Camouflage & Clothing
                     </h3>
                     <p className="text-silver/70 font-body text-sm md:text-base leading-relaxed mb-4">
-                      The bushveld demands earth tones. Sitka Subalpine or similar patterns blend perfectly with the Vachellia (Acacia) woodlands and iron-rich soil. Avoid dark blues—they attract Tsetse flies (though rare in Thabazimbi).
+                      The bushveld demands earth tones. Sitka Subalpine or similar patterns blend perfectly with the Vachellia (Acacia) woodlands and iron-rich soil. Avoid dark blues. They attract Tsetse flies, though rare in Thabazimbi.
                     </p>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <h4 className="text-cream font-heading text-base mb-3 font-light">Recommended</h4>
                         <ul className="space-y-2 text-silver/60 font-body text-sm">
                           <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>Sitka Subalpine or Earth Tone patterns</span>
                     </li>
                     <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>Layered system (base, mid, outer)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>Wind-resistant outer layer</span>
                           </li>
                         </ul>
@@ -637,15 +683,15 @@ export default function HuntPage() {
                         <h4 className="text-cream font-heading text-base mb-3 font-light">Climate Considerations</h4>
                         <ul className="space-y-2 text-silver/60 font-body text-sm">
                           <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>Winter: 5°C to 25°C (thermal layers essential)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>Summer: 15°C to 35°C (lightweight, breathable)</span>
                     </li>
                     <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>Sun protection: Wide-brim hat, UV-blocking shirt</span>
                     </li>
                   </ul>
@@ -667,11 +713,11 @@ export default function HuntPage() {
                         </p>
                         <ul className="space-y-2 text-silver/60 font-body text-sm">
                           <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>8x42 for general use (wider field of view)</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>10x42 for long-range identification</span>
                           </li>
                         </ul>
@@ -680,19 +726,19 @@ export default function HuntPage() {
                         <h4 className="text-cream font-heading text-base mb-3 font-light">Rifle & Accessories</h4>
                         <ul className="space-y-2 text-silver/60 font-body text-sm">
                           <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>Quality scope with low-light capability</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>Bipod or shooting sticks (essential for stability)</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>Rifle case with proper padding for transport</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <span className="text-clay mt-1">—</span>
+                            <span className="text-clay mt-1">•</span>
                             <span>Cleaning kit (dust is pervasive)</span>
                           </li>
                         </ul>
@@ -735,15 +781,15 @@ export default function HuntPage() {
                     </p>
                     <ul className="space-y-2 text-silver/60 font-body text-sm">
                       <li className="flex items-start gap-3">
-                        <span className="text-clay mt-1">—</span>
+                        <span className="text-clay mt-1">•</span>
                         <span><strong className="text-cream">Fresh:</strong> Clear edges, no debris, recent disturbance</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <span className="text-clay mt-1">—</span>
+                        <span className="text-clay mt-1">•</span>
                         <span><strong className="text-cream">Aging:</strong> Wind-blown edges, partial filling, debris accumulation</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <span className="text-clay mt-1">—</span>
+                        <span className="text-clay mt-1">•</span>
                         <span><strong className="text-cream">Old:</strong> Rounded edges, significant filling, weathered appearance</span>
                       </li>
                     </ul>
@@ -759,15 +805,15 @@ export default function HuntPage() {
                     </p>
                     <ul className="space-y-2 text-silver/60 font-body text-sm">
                       <li className="flex items-start gap-3">
-                        <span className="text-clay mt-1">—</span>
+                        <span className="text-clay mt-1">•</span>
                         <span><strong className="text-cream">Dung:</strong> Moisture content indicates age</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <span className="text-clay mt-1">—</span>
+                        <span className="text-clay mt-1">•</span>
                         <span><strong className="text-cream">Browse:</strong> Height and species indicate target animal</span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <span className="text-clay mt-1">—</span>
+                        <span className="text-clay mt-1">•</span>
                         <span><strong className="text-cream">Gait:</strong> Walking, trotting, or running reveals urgency</span>
                       </li>
                     </ul>
@@ -784,15 +830,15 @@ export default function HuntPage() {
                     <div>
                       <h4 className="text-cream font-heading text-base mb-3 font-light">Greater Kudu</h4>
                       <p className="text-silver/60 font-body text-sm leading-relaxed mb-3">
-                        The "Grey Ghost" demands patience. Tracking involves spotting the glint of horns in dappled light. The "Look Back" behavior—where the bull stops to check his pursuer—is the critical moment for the shot.
+                        The Grey Ghost demands patience. Tracking involves spotting the glint of horns in dappled light. The Look Back behavior, where the bull stops to check his pursuer, is the critical moment for the shot.
                       </p>
                       <ul className="space-y-2 text-silver/60 font-body text-sm">
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Prefers thick bushveld and rocky hills</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Often beds down in dense cover during heat of day</span>
                         </li>
                       </ul>
@@ -804,11 +850,11 @@ export default function HuntPage() {
                       </p>
                       <ul className="space-y-2 text-silver/60 font-body text-sm">
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Prefers open grasslands and valleys</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>Herd behavior creates "confusion tracks"</span>
                         </li>
                       </ul>

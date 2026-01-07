@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { speciesDatabase, getSpeciesByCategory } from "@/lib/speciesData";
 
 export default function SpeciesPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -14,176 +15,15 @@ export default function SpeciesPage() {
     { id: "plains", name: "Plains Runners" },
     { id: "desert", name: "Desert Specialists" },
     { id: "small", name: "Small Game" },
+    { id: "dangerous", name: "Dangerous Game" },
   ];
 
-  const speciesData = [
-    {
-      id: "kudu",
-      name: "Greater Kudu",
-      nickname: "The Grey Ghost of Africa",
-      category: "spiral",
-      investment: "$3,500",
-      weight: { male: "220-270 kg", female: "120-160 kg" },
-      height: { male: "140-155 cm", female: "120-135 cm" },
-      caliber: ".30-06 Springfield (180-grain), .300 Win Mag, 7mm Rem Mag",
-      shotPlacement: "Lower third of shoulder, tracing front leg up",
-      meat: "Finest game meat in South Africa. Lean, subtle herbal undertone. Requires added fat during cooking.",
-      behavior: "Master of camouflage. Solitary bulls or small bachelor herds. Rut: May-June.",
-      tracking: "Elongated, narrow hooves (8-9 cm). Look for high browse at 1.5-2m height.",
-      trophy: "Record: 73 7/8\". Deep spirals. Bulls swell during rut.",
-      description: "Revered as the most sought-after plains game trophy. Their ability to vanish into dappled light despite immense size is legendary.",
-    },
-    {
-      id: "eland",
-      name: "Cape Eland",
-      nickname: "The Heavyweight",
-      category: "spiral",
-      investment: "$4,200",
-      weight: { male: "700-900+ kg", female: "300-450 kg" },
-      height: { male: "170-180 cm", female: "150-160 cm" },
-      caliber: ".375 H&H Magnum (ideal), .300 Win Mag, .338 Win Mag",
-      shotPlacement: "Halfway up shoulder body, tighter to crease. Heart sits very low.",
-      meat: "Unique among antelope - significant intramuscular fat. Tastes like high-quality beef. Tallow valuable for soap/candles.",
-      behavior: "Massive dewlap for thermoregulation. Loud 'clicking' sound from knees when walking.",
-      tracking: "Circular, massive tracks (12-15 cm). Bovine-like dung in cohesive piles.",
-      trophy: "Massive bases, tight spiral. Both sexes carry horns.",
-      description: "The heavyweight of the antelope world. Resembling an ox more than an antelope, possessing majesty and spiritual significance.",
-    },
-    {
-      id: "wildebeest",
-      name: "Blue Wildebeest",
-      nickname: "The Poor Man's Buffalo",
-      category: "plains",
-      investment: "$2,200",
-      weight: { male: "230-270 kg", female: "180-220 kg" },
-      height: { male: "145-150 cm", female: "135-140 cm" },
-      caliber: ".300 Win Mag, .338 Win Mag, 9.3x62mm (premium bonded bullets mandatory)",
-      shotPlacement: "Extremely low. Follow back of front leg up, bottom third of body. Heart sits very low.",
-      meat: "Coarse-grained, robust and gamey. Premier meat for Droewors (dried sausage). Requires slow cooking.",
-      behavior: "Notorious for absorbing lethal shots and running hundreds of meters. Often circle back to watch backtrail.",
-      tracking: "Large, broad tracks. Rounded front, tapered. Wallowing common.",
-      trophy: "Thick boss, wide spread outside ears. 18-20 year lifespan.",
-      description: "Often called the 'Clown of the Veld' but conversely 'The Poor Man's Buffalo' for incredible toughness and tenacity.",
-    },
-    {
-      id: "gemsbok",
-      name: "Gemsbok / Oryx",
-      nickname: "The Desert Warrior",
-      category: "desert",
-      investment: "$2,800",
-      weight: { male: "220-250 kg", female: "180-210 kg" },
-      height: { male: "120-125 cm", female: "115-120 cm" },
-      caliber: ".300 Win Mag, .338 Win Mag (deep penetration required)",
-      shotPlacement: "Vitals slightly further forward. Punch through shoulder.",
-      meat: "Widely considered best-tasting venison in Africa. Succulent, slightly sweet, fine texture. Prime steaks medium-rare.",
-      behavior: "Can survive without surface water. Will stand ground against lions. Horns are lethal weapons - never approach wounded from front.",
-      tracking: "Desert-adapted. Look for tracks in sandy terrain.",
-      trophy: "Females often longer horns, males thicker bases. Black-and-white facial mask.",
-      description: "The warrior of the desert. Strikingly beautiful with long straight horns. Flagship species for arid zones.",
-    },
-    {
-      id: "springbok",
-      name: "Springbok",
-      nickname: "National Animal of South Africa",
-      category: "desert",
-      investment: "$800",
-      weight: { male: "35-45 kg", female: "25-35 kg" },
-      height: { male: "75 cm", female: "70-75 cm" },
-      caliber: ".22-250, .243 Win, 6.5 Creedmoor (accuracy over power)",
-      shotPlacement: "Tight behind shoulder. Vital area is small (grapefruit size).",
-      meat: "Highly prized. Loin served as Carpaccio (raw, thinly sliced). 80% less cholesterol than beef.",
-      behavior: "Pronking behavior - jumping high with stiff legs. 'Springbok Slam' - four color phases: Common, Black, White, Copper.",
-      tracking: "Small tracks. Look for pronking marks in sand.",
-      trophy: "Lyre-shaped, thick base. SCI Gold: 30\"",
-      description: "The national animal. Hunting Springbok in the Karoo is a cultural institution akin to driven grouse shooting in Scotland.",
-    },
-    {
-      id: "impala",
-      name: "Impala",
-      nickname: "Bread and Butter of Safari",
-      category: "plains",
-      investment: "$800",
-      weight: { male: "50-70 kg", female: "40-50 kg" },
-      height: { male: "85-95 cm", female: "75-85 cm" },
-      caliber: ".243 Win, .270 Win, 7x57 Mauser (excessive power causes meat wastage)",
-      shotPlacement: "Standard heart/lung shot. Small vital area.",
-      meat: "Versatile and tender. Standard for Potjiekos (stew). Absorbs marinades well - ideal for schnitzels.",
-      behavior: "Distinctive 'McDonald's M' on buttocks. During rut (May), rams become extremely vocal with loud roars.",
-      tracking: "Small, heart-shaped tracks. No dewclaws.",
-      trophy: "Lyre-shaped, heavy ridges. SCI Gold: 52\"",
-      description: "The 'bread and butter' of the safari industry - ubiquitous, beautiful, perfect introduction for first-time African hunters.",
-    },
-    {
-      id: "blesbok",
-      name: "Blesbok",
-      nickname: "Symbol of the Highveld",
-      category: "plains",
-      investment: "$1,200",
-      weight: { male: "70-85 kg", female: "60-70 kg" },
-      height: { male: "95 cm", female: "90-95 cm" },
-      caliber: ".243 Win, 6.5 Creedmoor, .270 Win, 7mm Rem Mag (flat-shooting essential)",
-      shotPlacement: "Standard heart/lung. Lead necessary on running shots.",
-      meat: "Good, honest venison. Excellent for sosaties (marinated kebabs) on braai.",
-      behavior: "Diurnal grazers. Stand in open sun with heads lowered, nodding. Color variants: White, Copper, Yellow.",
-      tracking: "Medium-sized tracks. Grazing patterns visible.",
-      trophy: "White rings, thick base. SCI Gold: 40\"",
-      description: "Endemic to South Africa. Once nearly hunted to extinction, now one of the most commercially successful species on game farms.",
-    },
-    {
-      id: "hartebeest",
-      name: "Red Hartebeest",
-      nickname: "The Harley Davidson",
-      category: "plains",
-      investment: "$1,500",
-      weight: { male: "150 kg", female: "120 kg" },
-      height: { male: "130 cm", female: "125 cm" },
-      caliber: ".30-06, .300 Win Mag (tougher than they look)",
-      shotPlacement: "Aim low on shoulder. High withers can deceive into shooting too high.",
-      meat: "Good quality venison. Lean and flavorful.",
-      behavior: "One of fastest antelope (60-70 km/h). Use termite mounds as lookout posts. Often run, stop, and look back.",
-      tracking: "Distinctive tracks. Look for termite mound activity.",
-      trophy: "Heavy Z-shape horns. 18-20 year lifespan.",
-      description: "The 'Harley Davidson' of the antelope world - high shoulders, sloping back, elongated face.",
-    },
-    {
-      id: "bushbuck",
-      name: "Bushbuck",
-      nickname: "The Pugnacious Antelope",
-      category: "spiral",
-      investment: "$1,800",
-      weight: { male: "40-80 kg", female: "25-60 kg" },
-      height: { male: "70-100 cm", female: "65-85 cm" },
-      caliber: ".308 Win, 7mm-08 (heavy, slow bullet best). 12-gauge slug effective in thickets.",
-      shotPlacement: "Shoulder crease. Precision key. Gut-shot is safety hazard.",
-      meat: "Tender and tasty. Excellent for stews and curries.",
-      behavior: "Known as 'poor man's buffalo' - will actively charge if wounded. Strictly riverine and forest-dwelling.",
-      tracking: "Small tracks in riverine areas. Look for hunched posture signs.",
-      trophy: "Straight with spiral keel (12-18\"). Dark brown to almost black males.",
-      description: "The smallest spiral horn but punches above weight. Known as 'Imbabala' - strictly riverine and forest-dwelling.",
-    },
-    {
-      id: "warthog",
-      name: "Warthog",
-      nickname: "Vlakvark",
-      category: "small",
-      investment: "$600",
-      weight: { male: "60-100 kg", female: "50-80 kg" },
-      height: "65-85 cm",
-      caliber: ".308 Win, .30-06 (shot placement critical)",
-      shotPlacement: "Very low - heart sits almost between front legs. Enter burrows backward.",
-      meat: "Superb - like pork but leaner and nuttier. Smoked ribs and cabanossi sausages are lodge favorites.",
-      behavior: "Live in burrows, enter backward (defensive posture). Highly sought for tusks.",
-      tracking: "Distinctive pig tracks. Look for burrow entrances.",
-      trophy: "Tusk length + circumference. SCI Gold: 29\"",
-      description: "While often a 'target of opportunity,' highly sought after for tusks and exceptional meat quality.",
-    },
-  ];
-
+  // Use speciesDatabase instead of hardcoded data
   const filteredSpecies = selectedCategory === "all" 
-    ? speciesData 
-    : speciesData.filter(s => s.category === selectedCategory);
+    ? speciesDatabase 
+    : getSpeciesByCategory(selectedCategory);
 
-  const selectedSpeciesData = speciesData.find(s => s.id === selectedSpecies);
+  const selectedSpeciesData = filteredSpecies.find(s => s.id === selectedSpecies);
 
   // Map species IDs to image filenames
   const getSpeciesImage = (speciesId: string) => {
@@ -198,6 +38,7 @@ export default function SpeciesPage() {
       hartebeest: "/images/Red Hartebeest.png",
       bushbuck: "/images/Bushbuck.png",
       warthog: "/images/Warthog.png",
+      buffalo: "/images/Cape Buffalo.png",
     };
     return imageMap[speciesId] || "/images/Greater Kudu.png";
   };
@@ -329,27 +170,27 @@ export default function SpeciesPage() {
                   <div className="space-y-3 text-sm">
                     <div>
                       <span className="text-silver/50 font-body">Weight (Male):</span>
-                      <span className="text-silver/80 font-body ml-2">{selectedSpeciesData.weight.male}</span>
+                      <span className="text-silver/80 font-body ml-2">{selectedSpeciesData.biometrics.weight.male}</span>
                     </div>
                     <div>
                       <span className="text-silver/50 font-body">Weight (Female):</span>
-                      <span className="text-silver/80 font-body ml-2">{selectedSpeciesData.weight.female}</span>
+                      <span className="text-silver/80 font-body ml-2">{selectedSpeciesData.biometrics.weight.female}</span>
                     </div>
-                    {typeof selectedSpeciesData.height === 'object' ? (
+                    {typeof selectedSpeciesData.biometrics.height === 'object' ? (
                       <>
                         <div>
                           <span className="text-silver/50 font-body">Height (Male):</span>
-                          <span className="text-silver/80 font-body ml-2">{selectedSpeciesData.height.male}</span>
+                          <span className="text-silver/80 font-body ml-2">{selectedSpeciesData.biometrics.height.male}</span>
                         </div>
                         <div>
                           <span className="text-silver/50 font-body">Height (Female):</span>
-                          <span className="text-silver/80 font-body ml-2">{selectedSpeciesData.height.female}</span>
+                          <span className="text-silver/80 font-body ml-2">{selectedSpeciesData.biometrics.height.female}</span>
                         </div>
                       </>
                     ) : (
                       <div>
                         <span className="text-silver/50 font-body">Height:</span>
-                        <span className="text-silver/80 font-body ml-2">{selectedSpeciesData.height}</span>
+                        <span className="text-silver/80 font-body ml-2">{selectedSpeciesData.biometrics.height}</span>
                       </div>
                     )}
                   </div>
@@ -360,15 +201,15 @@ export default function SpeciesPage() {
                   <div className="space-y-3 text-sm">
                     <div>
                       <span className="text-silver/50 font-body">Recommended Caliber:</span>
-                      <p className="text-clay font-body mt-1">{selectedSpeciesData.caliber}</p>
+                      <p className="text-clay font-body mt-1">{selectedSpeciesData.hunting.caliber}</p>
                     </div>
                     <div>
                       <span className="text-silver/50 font-body">Shot Placement:</span>
-                      <p className="text-silver/80 font-body mt-1">{selectedSpeciesData.shotPlacement}</p>
+                      <p className="text-silver/80 font-body mt-1">{selectedSpeciesData.hunting.shotPlacement}</p>
                     </div>
                     <div>
                       <span className="text-silver/50 font-body">Trophy:</span>
-                      <p className="text-silver/80 font-body mt-1">{selectedSpeciesData.trophy}</p>
+                      <p className="text-silver/80 font-body mt-1">{selectedSpeciesData.hunting.trophy}</p>
                     </div>
                   </div>
                 </div>
@@ -378,11 +219,11 @@ export default function SpeciesPage() {
                   <div className="space-y-3 text-sm">
                     <div>
                       <span className="text-silver/50 font-body">Behavior:</span>
-                      <p className="text-silver/80 font-body mt-1">{selectedSpeciesData.behavior}</p>
+                      <p className="text-silver/80 font-body mt-1">{selectedSpeciesData.behavior.social}. {selectedSpeciesData.behavior.defense}</p>
                     </div>
                     <div>
                       <span className="text-silver/50 font-body">Tracking:</span>
-                      <p className="text-silver/80 font-body mt-1">{selectedSpeciesData.tracking}</p>
+                      <p className="text-silver/80 font-body mt-1">{selectedSpeciesData.tracking.strategy}</p>
                     </div>
                   </div>
                 </div>
@@ -390,7 +231,7 @@ export default function SpeciesPage() {
                 <div className="border border-clay/20 p-6">
                   <h3 className="text-cream font-heading text-xl mb-4 font-light">Culinary Utilization</h3>
                   <p className="text-silver/80 font-body text-sm leading-relaxed">
-                    {selectedSpeciesData.meat}
+                    {selectedSpeciesData.hunting.meat}
                   </p>
                 </div>
               </div>

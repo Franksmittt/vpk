@@ -164,7 +164,7 @@ export default function TrustPage() {
                 Vaalpenskraal is a place of deep listening. We ask that the sounds of the bush remain dominant. Amplified music is restricted to personal headphones or exclusive-use interior spaces.
               </p>
               <p className="text-silver/50 font-body text-xs leading-relaxed tracking-[0.02em] font-light italic">
-                This policy ensures all guests can experience the natural soundscape—the call of birds, the rustle of wind through acacia, the distant rumble of thunder.
+                This policy ensures all guests can experience the natural soundscape: the call of birds, the rustle of wind through acacia, the distant rumble of thunder.
               </p>
             </div>
             <div className="border border-clay/20 p-8 hover:border-clay/40 transition-all duration-500">

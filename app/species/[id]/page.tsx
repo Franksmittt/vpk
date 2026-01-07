@@ -17,6 +17,7 @@ function getSpeciesImagePathForMetadata(speciesId: string): string {
     hartebeest: "/images/Red Hartebeest.png",
     bushbuck: "/images/Bushbuck.png",
     warthog: "/images/Warthog.png",
+    buffalo: "/images/Cape Buffalo.png",
   };
   return imageMap[speciesId] || "/images/Greater Kudu.png";
 }
@@ -95,6 +96,7 @@ function getSpeciesImagePath(speciesId: string): string {
     hartebeest: "/images/Red Hartebeest.png",
     bushbuck: "/images/Bushbuck.png",
     warthog: "/images/Warthog.png",
+    buffalo: "/images/Cape Buffalo.png",
   };
   return imageMap[speciesId] || "/images/Greater Kudu.png";
 }
@@ -128,6 +130,33 @@ function getSpeciesDetailImage(speciesId: string, imageType: 'habitat' | 'tracki
       hunting: "/images/wildebeest-hunting.jpg",
       track: "/images/wildebeest-track.jpg",
       spoor: "/images/wildebeest-spoor.jpg",
+    },
+    gemsbok: {
+      habitat: "/images/gemsbok-habitat.jpg",
+      tracking: "/images/gemsbok-tracking.jpg",
+      morphology: "/images/gemsbok-morphology.jpg",
+      behavior: "/images/gemsbok-behavior.jpg",
+      hunting: "/images/gemsbok-hunting.jpg",
+      track: "/images/gemsbok-track.jpg",
+      spoor: "/images/gemsbok-spoor.jpg",
+    },
+    springbok: {
+      habitat: "/images/springbok-habitat.jpg",
+      tracking: "/images/springbok-tracking.jpg",
+      morphology: "/images/springbok-morphology.jpg",
+      behavior: "/images/springbok-behavior.jpg",
+      hunting: "/images/springbok-hunting.jpg",
+      track: "/images/springbok-track.jpg",
+      spoor: "/images/springbok-spoor.jpg",
+    },
+    buffalo: {
+      habitat: "/images/buffalo-habitat.jpg",
+      tracking: "/images/buffalo-tracking.jpg",
+      morphology: "/images/buffalo-morphology.jpg",
+      behavior: "/images/buffalo-behavior.jpg",
+      hunting: "/images/buffalo-hunting.jpg",
+      track: "/images/buffalo-track.jpg",
+      spoor: "/images/buffalo-spoor.jpg",
     },
   };
   

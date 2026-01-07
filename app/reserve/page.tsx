@@ -62,7 +62,7 @@ export default function ReservePage() {
               Calculator
             </h2>
             <p className="text-silver/60 font-body text-sm md:text-base mt-6 max-w-3xl font-light">
-              This is not a transaction—it is a legacy. Every contribution goes directly to measurable conservation outcomes in the Waterberg Biosphere. We curate each guest experience to ensure the highest standards of conservation and ethical practice.
+              This is not a transaction. It is a legacy. Every contribution goes directly to measurable conservation outcomes in the Waterberg Biosphere. We curate each guest experience to ensure the highest standards of conservation and ethical practice.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-16">

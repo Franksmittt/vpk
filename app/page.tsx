@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
+import { speciesDatabase } from "@/lib/speciesData";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -537,7 +538,7 @@ export default function Home() {
               <span className="text-champagne">{t('fromArrivalToLegacy')}</span>
             </h2>
             <p className="text-white/70 font-montserrat text-sm md:text-base mt-6 max-w-3xl font-light">
-              Every interaction—from the moment you land at O.R. Tambo to the final processing of your harvest—is choreographed with military precision. This is not merely a hunt. This is a transformation.
+              Every interaction, from the moment you land at O.R. Tambo to the final processing of your harvest, is choreographed with military precision. This is not merely a hunt. This is a transformation.
             </p>
           </div>
 
@@ -640,14 +641,24 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
-              { name: "Buffalo", subtitle: "The Stronghold", investment: "$12,000", image: "/images/Blue Wildebeest.png", link: "/species" },
-              { name: "Kudu", subtitle: "The Graceful", investment: "$3,500", image: "/images/Greater Kudu.png", link: "/species" },
-              { name: "Gemsbok", subtitle: "The Desert King", investment: "$2,800", image: "/images/Gemsbok.png", link: "/species" },
-              { name: "Eland", subtitle: "The Gentle Giant", investment: "$4,200", image: "/images/Cape Eland.png", link: "/species" },
-            ].map((species, idx) => (
+              speciesDatabase.find(s => s.id === "buffalo"),
+              speciesDatabase.find(s => s.id === "kudu"),
+              speciesDatabase.find(s => s.id === "gemsbok"),
+              speciesDatabase.find(s => s.id === "eland"),
+            ].filter((species): species is NonNullable<typeof species> => species !== undefined).map((species, idx) => {
+              const getImagePath = (id: string) => {
+                const imageMap: { [key: string]: string } = {
+                  buffalo: "/images/Cape Buffalo HP.jpg",
+                  kudu: "/images/Greater Kudu HP.jpg",
+                  gemsbok: "/images/Gemsbok HP.jpg",
+                  eland: "/images/Cape Eland HP.jpg",
+                };
+                return imageMap[id] || "/images/Greater Kudu HP.jpg";
+              };
+              return (
               <Link
-                key={idx}
-                href={species.link}
+                key={species.id}
+                href={`/species/${species.id}`}
                 onClick={() => setActiveSpecies(idx)}
                 className={`luxury-card group relative h-[350px] md:h-[450px] overflow-hidden transition-all duration-500 cursor-pointer block ${
                   activeSpecies === idx
@@ -669,7 +680,7 @@ export default function Home() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
                   <Image
-                    src={species.image}
+                    src={getImagePath(species.id)}
                     alt={species.name}
                     fill
                     className="object-cover transition-all duration-500"
@@ -709,7 +720,7 @@ export default function Home() {
                         textShadow: "0 1px 4px rgba(0, 0, 0, 0.5)"
                       }}
                     >
-                    {species.subtitle}
+                    {species.nickname}
                   </p>
                     <div 
                       className="text-champagne font-heading text-xl md:text-2xl font-normal"
@@ -725,7 +736,7 @@ export default function Home() {
                   activeSpecies === idx ? "opacity-100 scale-150" : "opacity-0 scale-100"
                 }`}></div>
               </Link>
-            ))}
+            )})}
           </div>
           <div className="mt-12 text-center scroll-fade">
             <Link
@@ -778,7 +789,7 @@ export default function Home() {
                 </h3>
                 <ul className="space-y-4 text-white/70 font-montserrat text-sm md:text-base font-light">
                   <li className="flex items-start gap-3">
-                    <span><strong className="text-white font-normal">Conservation Investment:</strong> We pivot from "selling a hunt" to "inviting investment in biodiversity." Every contribution goes directly to measurable conservation outcomes. This is not a transaction—it is a legacy.</span>
+                    <span><strong className="text-white font-normal">Conservation Investment:</strong> We pivot from selling a hunt to inviting investment in biodiversity. Every contribution goes directly to measurable conservation outcomes. This is not a transaction. It is a legacy.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span><strong className="text-white font-normal">Radical Transparency:</strong> Real impact. Measurable results. Every conservation levy is tracked and displayed on our impact dashboard.</span>
@@ -1041,7 +1052,7 @@ export default function Home() {
                     Field to Fork
                   </h3>
                   <p className="text-white/70 font-montserrat text-sm md:text-base leading-relaxed mb-4 font-light">
-                    Food is a primary driver of luxury travel. Our culinary program navigates the delicate balance between the "hunter's feast" and refined gastronomy. The "Field to Fork" philosophy is the ethical bridge—demonstrating that the animal harvested is respected and utilized.
+                    Food is a primary driver of luxury travel. Our culinary program navigates the delicate balance between the hunter's feast and refined gastronomy. The Field to Fork philosophy is the ethical bridge, demonstrating that the animal harvested is respected and utilized.
                   </p>
                   <ul className="space-y-2 text-white/70 font-montserrat text-sm font-light">
                     <li className="flex items-start gap-3">
@@ -1079,10 +1090,10 @@ export default function Home() {
                 Kudu: The Venison of Kings. Eland: The Beef of the Bush. Gemsbok: Often cited as the tastiest venison. Each species offers a unique culinary experience, paired with South Africa's finest wines.
               </p>
                 <p className="text-base md:text-lg lg:text-xl leading-relaxed text-white/80 mb-6 font-montserrat font-light">
-                The Boma (open-air enclosure) is the heart of the safari evening. It is a sensory theater where the primal meets the refined—central fire with Leadwood logs, lanterns, starlight, and the sounds of the night.
+                The Boma (open-air enclosure) is the heart of the safari evening. It is a sensory theater where the primal meets the refined. Central fire with Leadwood logs, lanterns, starlight, and the sounds of the night.
               </p>
                 <p className="text-base md:text-lg lg:text-xl leading-relaxed text-white/80 mb-8 font-montserrat font-light">
-                  Our culinary philosophy honors the ethical harvest. Every dish tells a story of conservation, respect, and the seamless transformation from field to fork—where the primal hunt becomes refined gastronomy.
+                  Our culinary philosophy honors the ethical harvest. Every dish tells a story of conservation, respect, and the seamless transformation from field to fork, where the primal hunt becomes refined gastronomy.
               </p>
               <Link
                 href="/journey"

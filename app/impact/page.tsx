@@ -276,10 +276,10 @@ export default function ImpactPage() {
                 The Philanthropic Pivot
               </h3>
               <p className="text-silver/70 font-body text-sm md:text-base leading-relaxed mb-4">
-                When you invest in a hunt, you're not just investing in an experience—you're funding anti-poaching patrols, snare removal operations, habitat management, and meat donation programs that feed local communities.
+                When you invest in a hunt, you're not just investing in an experience. You're funding anti-poaching patrols, snare removal operations, habitat management, and meat donation programs that feed local communities.
               </p>
               <p className="text-silver/70 font-body text-sm md:text-base leading-relaxed">
-                This is radical transparency. Every rand is accounted for. Every kilometer patrolled, every snare removed, every kilogram of meat donated—these are the tangible results of your investment in conservation.
+                This is radical transparency. Every rand is accounted for. Every kilometer patrolled, every snare removed, every kilogram of meat donated. These are the tangible results of your investment in conservation.
               </p>
             </div>
           </div>
@@ -372,19 +372,19 @@ export default function ImpactPage() {
                 </p>
                 <ul className="space-y-3 text-silver/60 font-body text-sm">
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span><strong className="text-cream">320kg</strong> donated monthly</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span><strong className="text-cream">640+ meals</strong> provided to community members</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span><strong className="text-cream">3 communities</strong> served regularly</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>Partnership with local schools for nutrition programs</span>
                   </li>
                 </ul>
@@ -400,19 +400,19 @@ export default function ImpactPage() {
                 </p>
                 <ul className="space-y-3 text-silver/60 font-body text-sm">
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>Local employment in guiding, tracking, and hospitality</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>Support for local suppliers and service providers</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>Skills development and training programs</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-clay mt-1">—</span>
+                    <span className="text-clay mt-1">•</span>
                     <span>Investment in local infrastructure and facilities</span>
                   </li>
                 </ul>
@@ -497,7 +497,7 @@ export default function ImpactPage() {
                     <ul className="space-y-2">
                       {program.outcomes.map((outcome, outcomeIdx) => (
                         <li key={outcomeIdx} className="flex items-start gap-3 text-silver/60 font-body text-sm">
-                          <span className="text-clay mt-1">—</span>
+                          <span className="text-clay mt-1">•</span>
                           <span>{outcome}</span>
                         </li>
                       ))}
