@@ -30,15 +30,21 @@ export default function SpeciesPage() {
     const imageMap: { [key: string]: string } = {
       kudu: "/images/Greater Kudu.png",
       eland: "/images/Cape Eland.png",
+      "livingstone-eland": "/images/Livingstone Eland.jpg",
       wildebeest: "/images/Blue Wildebeest.png",
+      "golden-wildebeest": "/images/Golden Wildebeest.jpg",
+      "king-wildebeest": "/images/King Wildebeest.jpg",
       gemsbok: "/images/Gemsbok.png",
       springbok: "/images/springbok.png",
       impala: "/images/Impala.png",
+      "dapple-impala": "/images/Dapple Impala.jpg",
+      "white-flanked-impala": "/images/White-flanked Impala.jpg",
       blesbok: "/images/Blesbok.png",
       hartebeest: "/images/Red Hartebeest.png",
       bushbuck: "/images/Bushbuck.png",
       warthog: "/images/Warthog.png",
       buffalo: "/images/Cape Buffalo.png",
+      lechwe: "/images/Lechwe.jpg",
     };
     return imageMap[speciesId] || "/images/Greater Kudu.png";
   };
@@ -83,7 +89,7 @@ export default function SpeciesPage() {
       {/* Species Grid */}
       <div className="container mx-auto px-4 sm:px-6 md:px-12 py-12 md:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {filteredSpecies.map((species) => (
+          {filteredSpecies.map((species, idx) => (
             <Link
               key={species.id}
               href={`/species/${species.id}`}
@@ -97,6 +103,8 @@ export default function SpeciesPage() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading={idx < 6 ? "eager" : "lazy"}
+                  priority={idx < 3}
                 />
               </div>
               

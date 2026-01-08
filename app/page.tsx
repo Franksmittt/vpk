@@ -835,6 +835,7 @@ export default function Home() {
                   alt="The Pursuit - Fair Chase, Ballistic Science, Ethical Harvest"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                 
@@ -871,6 +872,7 @@ export default function Home() {
                   alt="The Connection - Veterinary Safaris, Wellness, Immersion"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                 
@@ -1044,6 +1046,7 @@ export default function Home() {
                     alt="Field to Fork - Venison tasting menu, Boma dinners, elevated South African cuisine"
                     fill
                     className="object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
                 </div>
@@ -1189,6 +1192,7 @@ export default function Home() {
                         alt={experience.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
                       />
                     </>
                   ) : (

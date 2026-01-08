@@ -47,13 +47,19 @@ export default function HuntPage() {
   const getHuntCardImage = (speciesId: string): string => {
     const imageMap: { [key: string]: string } = {
       wildebeest: "/images/wildebeest-hunt-card.jpg",
+      "golden-wildebeest": "/images/golden-wildebeest-hunt-card.jpg",
+      "king-wildebeest": "/images/king-wildebeest-hunt-card.jpg",
       impala: "/images/impala-hunt-card.jpg",
+      "dapple-impala": "/images/dapple-impala-hunt-card.jpg",
+      "white-flanked-impala": "/images/white-flanked-impala-hunt-card.jpg",
       blesbok: "/images/blesbok-hunt-card.jpg",
       hartebeest: "/images/hartebeest-hunt-card.jpg",
       kudu: "/images/kudu-hunt-card.jpg",
       eland: "/images/eland-hunt-card.jpg",
+      "livingstone-eland": "/images/livingstone-eland-hunt-card.jpg",
       bushbuck: "/images/bushbuck-hunt-card.jpg",
       buffalo: "/images/buffalo-hunt-card.jpg",
+      lechwe: "/images/lechwe-hunt-card.jpg",
     };
     return imageMap[speciesId] || "";
   };
@@ -258,6 +264,7 @@ export default function HuntPage() {
                             fill
                             className="object-cover"
                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            loading="lazy"
                           />
                         ) : (
                           <div className="absolute inset-0 flex items-center justify-center">
@@ -339,6 +346,7 @@ export default function HuntPage() {
                             fill
                             className="object-cover"
                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            loading="lazy"
                           />
                         ) : (
                           <div className="absolute inset-0 flex items-center justify-center">
@@ -420,6 +428,7 @@ export default function HuntPage() {
                             fill
                             className="object-cover"
                             sizes="(max-width: 768px) 100vw, 50vw"
+                            loading="lazy"
                           />
                         ) : (
                           <div className="absolute inset-0 flex items-center justify-center">

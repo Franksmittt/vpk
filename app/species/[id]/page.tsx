@@ -9,15 +9,21 @@ function getSpeciesImagePathForMetadata(speciesId: string): string {
   const imageMap: { [key: string]: string } = {
     kudu: "/images/Greater Kudu.jpg",
     eland: "/images/Cape Eland.jpg",
+    "livingstone-eland": "/images/Livingstone Eland.jpg",
     wildebeest: "/images/Blue Wildebeest1.jpg",
+    "golden-wildebeest": "/images/Golden Wildebeest.jpg",
+    "king-wildebeest": "/images/King Wildebeest.jpg",
     gemsbok: "/images/Gemsbok.png",
     springbok: "/images/springbok.png",
     impala: "/images/Impala.png",
+    "dapple-impala": "/images/Dapple Impala.jpg",
+    "white-flanked-impala": "/images/White-flanked Impala.jpg",
     blesbok: "/images/Blesbok.png",
     hartebeest: "/images/Red Hartebeest.png",
     bushbuck: "/images/Bushbuck.png",
     warthog: "/images/Warthog.png",
     buffalo: "/images/Cape Buffalo.png",
+    lechwe: "/images/Lechwe.jpg",
   };
   return imageMap[speciesId] || "/images/Greater Kudu.png";
 }
@@ -88,15 +94,21 @@ function getSpeciesImagePath(speciesId: string): string {
   const imageMap: { [key: string]: string } = {
     kudu: "/images/Greater Kudu.jpg",
     eland: "/images/Cape Eland.jpg",
+    "livingstone-eland": "/images/Livingstone Eland.jpg",
     wildebeest: "/images/Blue Wildebeest1.jpg",
+    "golden-wildebeest": "/images/Golden Wildebeest.jpg",
+    "king-wildebeest": "/images/King Wildebeest.jpg",
     gemsbok: "/images/Gemsbok.png",
     springbok: "/images/springbok.png",
     impala: "/images/Impala.png",
+    "dapple-impala": "/images/Dapple Impala.jpg",
+    "white-flanked-impala": "/images/White-flanked Impala.jpg",
     blesbok: "/images/Blesbok.png",
     hartebeest: "/images/Red Hartebeest.png",
     bushbuck: "/images/Bushbuck.png",
     warthog: "/images/Warthog.png",
     buffalo: "/images/Cape Buffalo.png",
+    lechwe: "/images/Lechwe.jpg",
   };
   return imageMap[speciesId] || "/images/Greater Kudu.png";
 }
@@ -157,6 +169,21 @@ function getSpeciesDetailImage(speciesId: string, imageType: 'habitat' | 'tracki
       hunting: "/images/buffalo-hunting.jpg",
       track: "/images/buffalo-track.jpg",
       spoor: "/images/buffalo-spoor.jpg",
+    },
+    "livingstone-eland": {
+      habitat: "/images/livingstone-eland-habitat.jpg",
+    },
+    lechwe: {
+      habitat: "/images/lechwe-habitat.jpg",
+    },
+    "golden-wildebeest": {
+      habitat: "/images/golden-wildebeest-habitat.jpg",
+    },
+    "dapple-impala": {
+      habitat: "/images/dapple-impala-habitat.jpg",
+    },
+    "white-flanked-impala": {
+      habitat: "/images/white-flanked-impala-habitat.jpg",
     },
   };
   
