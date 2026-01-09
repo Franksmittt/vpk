@@ -1,13 +1,15 @@
 ================================================================================
-VAALPENSKRAAL GAME RESERVE - PROJECT STYLE, LAYOUT, COLORS & FEATURES
+VAALPENSKRAAL GAME RESERVE - COMPLETE PROJECT OVERVIEW
 ================================================================================
 
 PROJECT OVERVIEW
 ----------------
 Website: Vaalpenskraal Game Reserve - Luxury Safari & Hunting Experience
-Location: Thabazimbi, Limpopo, South Africa
+Location: Thabazimbi, Limpopo, South Africa (Waterberg Biosphere)
 Target Audience: International luxury travelers, ethical hunters, conservation enthusiasts
 Design Philosophy: "Iron Mountain" - Immersive Realism, Cinematic Luxury
+Framework: Next.js 16.0.10 (App Router) with TypeScript
+Repository: https://github.com/Franksmittt/vpk.git
 
 ================================================================================
 1. DESIGN PHILOSOPHY & AESTHETIC
@@ -19,10 +21,11 @@ Core Aesthetic: "Iron Mountain" - Immersive Realism
 - Rejects clichéd "safari brochure" aesthetic
 - Sophisticated, dark luxury experience
 - Feels like a high-end travel magazine rather than traditional hunting lodge website
+- No blood imagery - clean, respectful presentation
 
 Design Pillars:
 1. Quiet Luxury - Understated elegance over flashy displays
-2. Cinematic Verité - Film-like quality, atmospheric storytelling (no blood imagery)
+2. Cinematic Verité - Film-like quality, atmospheric storytelling
 3. Radical Transparency - Honest, direct communication about conservation and ethics
 4. Technical Authority - Precision in ballistics, logistics, and species knowledge
 5. Emotional Connection - Balancing the primal hunt with world-class luxury
@@ -35,22 +38,32 @@ PRIMARY COLORS (The Modern Heritage Palette)
 --------------------------------------------
 - Deep Olive (#2B3D26) - Primary color, signals authority, camouflage, nature
 - Canvas Cream (#EFEBD6) - Secondary, replaces stark white, reduces glare, evokes tented camps
-- Burnished Copper (#B87333) - Metallic accent for luxury, connects to "bullet/brass" aesthetic
+- Burnished Copper (#B87333) - Metallic accent for luxury, connects to "bullet/brass" aesthetic (also "clay")
 - Signal Orange (#D65A31) - High visibility for conversion, refined nod to "Safety Orange"
-- Espresso (#231F20) - Warm alternative to black, body text, dark mode backgrounds
+- Espresso (#231F20) - Warm alternative to black, body text, dark mode backgrounds (also "charcoal")
 
 BUSHVELD SPECTRUM COLORS (Authentic African Colors)
 ---------------------------------------------------
-- Bushveld Soil (#894e34) - Oxidised iron-rich earth, grounding, warmth
+- Bushveld Soil (#894e34) - Oxidised iron-rich earth, grounding, warmth (also "soil")
 - Acacia Bark (#543939) - Dark hardwood trunks, stability, ruggedness
 - Winter Sky (#537285) - Mid-day horizon haze, expansive, calming
 - Dried Grass (#9a7e49) - Dormant savannah grass, natural, seasonal
-- Sunset Gold (#c98455) - Golden hour light, luxury, warmth, nostalgia (also called "Champagne")
+- Sunset Gold (#c98455) - Golden hour light, luxury, warmth, nostalgia (also "champagne")
+
+LEGACY COLOR MAPPINGS (Backward Compatibility)
+-----------------------------------------------
+- charcoal → espresso (#231F20)
+- sand → canvas-cream (#EFEBD6)
+- clay → burnished-copper (#B87333)
+- soil → bushveld-soil (#894e34)
+- cream → canvas-cream (#EFEBD6)
+- champagne → sunset-gold (#c98455)
 
 TEXT COLORS
 -----------
 - Canvas Cream (#EFEBD6) - Primary text on dark backgrounds (headings, important text)
 - White/White Opacity - Used for body text on dark backgrounds (white/80, white/70, white/60)
+- Silver/Opacity - Secondary text (silver/80, silver/70, silver/60)
 - Sunset Gold/Champagne - Accent text, highlights, CTAs
 
 COLOR USAGE RULES
@@ -70,12 +83,12 @@ FONT FAMILIES
 1. Playfair Display (Serif) - Headings
    - Weights: 400, 500, 600, 700, 800
    - Usage: All h1-h6 headings, display text
-   - Variable: --font-serif
+   - Variable: --font-serif, font-heading
 
 2. Inter (Sans-serif) - Body Text
    - Weights: 300, 400, 500, 600, 700
    - Usage: Body text, paragraphs, descriptions
-   - Variable: --font-sans
+   - Variable: --font-sans, font-body
 
 3. Montserrat (Sans-serif) - UI Elements
    - Weights: 400, 500, 600, 700
@@ -84,17 +97,25 @@ FONT FAMILIES
 
 TYPOGRAPHY SCALE
 ----------------
-- h1: 5xl (3rem) md:7xl (4.5rem) lg:8xl (6rem) - Font light
-- h2: 4xl (2.25rem) md:6xl (3.75rem) - Font light
-- h3: 3xl (1.875rem) md:5xl (3rem) - Font normal
-- Body: Base (1rem) md:lg (1.125rem) lg:xl (1.25rem)
-- Small: xs (0.75rem) sm:text-sm (0.875rem)
+- h1: text-5xl (3rem) md:text-7xl (4.5rem) lg:text-8xl (6rem) - Font light
+- h2: text-4xl (2.25rem) md:text-6xl (3.75rem) - Font light
+- h3: text-3xl (1.875rem) md:text-5xl (3rem) - Font normal
+- h4: text-2xl (1.5rem) md:text-3xl (1.875rem) - Font light/normal
+- Body: text-base (1rem) md:text-lg (1.125rem) lg:text-xl (1.25rem)
+- Small: text-xs (0.75rem) sm:text-sm (0.875rem)
 
 LETTER SPACING
 --------------
-- Headings: -0.02em (tighter)
-- Body: 0.01em (slightly loose)
-- Uppercase text: 0.1em - 0.3em (tracking-wide to tracking-[0.3em])
+- Headings: -0.02em (tighter, letter-spacing: -0.02em)
+- Body: 0.01em (slightly loose, letter-spacing: 0.01em)
+- Uppercase text: 0.1em - 0.3em (tracking-[0.1em] to tracking-[0.3em])
+- Buttons: tracking-[0.2em] (standard uppercase spacing)
+
+FONT WEIGHTS
+-----------
+- Headings: font-light (300) for h1/h2, font-normal (400) for h3+
+- Body: font-light (300) for most text, font-normal (400) for emphasis
+- Buttons: font-light (300) for uppercase text
 
 ================================================================================
 4. LAYOUT & SPACING
@@ -103,22 +124,31 @@ LETTER SPACING
 CONTAINER WIDTHS
 ----------------
 - Max-width: 7xl (80rem / 1280px) - Standard container for most sections
-- Max-width: 6xl (72rem / 1152px) - Some specialized sections
+- Max-width: 6xl (72rem / 1152px) - Some specialized sections (species detail pages)
+- Max-width: 5xl (64rem / 1024px) - Narrower content sections
+- Max-width: 4xl (56rem / 896px) - Hero text content
 - Full-width: Hero sections, background images
 
 PADDING & SPACING
 -----------------
-- Section padding: pt-8 md:pt-12 lg:pt-16 pb-8 md:pb-12 lg:pb-16
-- Container padding: px-4 sm:px-6 md:px-12
+- Section padding: py-12 md:py-20 (standard), py-8 md:py-12 (compact)
+- Container padding: px-4 sm:px-6 md:px-12 (responsive horizontal padding)
 - Card padding: p-6 md:p-8 lg:p-10
-- Button padding: px-8 md:px-10 py-3 md:py-4
+- Button padding: px-8 md:px-10 py-3 md:py-4 (standard), px-10 md:px-12 py-4 md:py-5 (large)
+- Page container: pt-24 md:pt-32 (accounts for fixed header)
 
 GRID SYSTEMS
 ------------
-- 2-column grid: md:grid-cols-2 (for side-by-side content)
-- 3-column grid: md:grid-cols-3 (for journey stages, experience cards)
-- 4-column grid: md:grid-cols-4 (for species showcase)
-- Responsive: Stacks to single column on mobile
+- 2-column grid: md:grid-cols-2 (for side-by-side content, cards)
+- 3-column grid: md:grid-cols-3 (for journey stages, experience cards, species showcase)
+- 4-column grid: md:grid-cols-4 (for footer sections, trust badges)
+- Responsive: Stacks to single column on mobile (grid-cols-1)
+- Auto-fit grid: broken-grid utility class for flexible layouts
+
+GAP SPACING
+-----------
+- Grid gaps: gap-6 md:gap-8 (standard), gap-8 md:gap-12 (larger)
+- Flex gaps: gap-4 md:gap-6 (standard), gap-6 md:gap-8 (larger)
 
 ================================================================================
 5. VISUAL EFFECTS & STYLING
@@ -130,89 +160,413 @@ GLASSMORPHISM (Frosted Glass Effect)
 - Backdrop Filter: blur(10px-12px) - Creates frosted glass effect
 - Border: 1px solid rgba(255, 255, 255, 0.1) - Subtle white border
 - Border Radius: 12px - Rounded corners
-- Used in: Header, cards, booking widget, trust badges
+- Used in: Header, cards, booking widget, trust badges, modal overlays
 
 GRADIENTS
 ---------
 - Background gradients: linear-gradient(to bottom, rgba(35, 31, 32, 1) to rgba(35, 31, 32, 0.95))
-- Text gradients: Used sparingly for accent text
+- Hero overlays: bg-gradient-to-b from-charcoal/60 via-charcoal/40 to-transparent
+- Multi-layer gradients: Combined gradients for depth (soil/clay/charcoal combinations)
 - Image overlays: bg-black/20 to bg-black/40 - Dark overlays on images
 
 SHADOWS & DEPTH
 ---------------
 - Text shadows: 0 2px 8px rgba(0,0,0,0.5) to 0 4px 16px rgba(0,0,0,0.6)
 - Box shadows: Minimal, used sparingly
-- Depth created through: Layering, opacity, backdrop blur
+- Depth created through: Layering, opacity, backdrop blur, gradient overlays
 
 ANIMATIONS
 ----------
-- Scroll fade: Elements fade in as user scrolls (Intersection Observer)
-- Hover effects: Scale transforms, opacity changes, border color transitions
+- Scroll fade: Elements fade in as user scrolls (Intersection Observer API)
+- Hover effects: Scale transforms (scale-[1.02] to scale-110), opacity changes, border color transitions
 - Page transitions: Smooth fade-in animations
 - Auto-rotate: Species showcase auto-rotates every 4 seconds
+- Float animation: Subtle floating effect for decorative elements (6s ease-in-out infinite)
+- Transition duration: 300ms (fast), 500ms (standard), 700ms (smooth)
+
+INTERSECTION OBSERVER SETTINGS
+-------------------------------
+- Threshold: 0.15 (15% visible triggers animation)
+- Root margin: "0px 0px -50px 0px" (triggers slightly before element enters viewport)
+- Applied to: All scroll-fade elements, section refs
 
 ================================================================================
 6. COMPONENT STYLES
 ================================================================================
 
-HEADER
-------
+HEADER (components/layout/Header.tsx)
+--------------------------------------
 - Position: Fixed top, z-index 1000
-- Background: Glassmorphism (rgba(35, 31, 32, 0.25) with blur)
+- Background: Glassmorphism (rgba(35, 31, 32, 0.25) with backdrop-blur-md)
 - Height: h-20 md:h-24 (80px/96px)
 - Layout: Left (Menu + Phone), Center (Logo), Right (Language + CTA)
-- Logo: "VAALPENSKRAAL" (Playfair Display) + "LUXURY GAME RESERVE" (Montserrat)
+- Logo: "VAALPENSKRAAL" (Playfair Display, font-heading) + "LUXURY GAME RESERVE" (Montserrat, font-montserrat)
+- Navigation: 8 links (Home, The Hunt, The Journey, Sanctuary, Species, Impact, Trust & Logistics, Reserve)
+- Mobile: Hamburger menu with slide-out drawer
+- Desktop: Dropdown menu with hover states
+- Language Selector: Dropdown with 4 languages (English, Deutsch, Français, Afrikaans) with flag emojis
+- CTA Button: "Book Your Safari" - signal-orange background, canvas-cream text
+- Sticky behavior: Stays fixed on scroll, backdrop blur increases opacity
+
+FOOTER (components/layout/Footer.tsx)
+--------------------------------------
+- Background: Gradient from espresso to espresso/95
+- Layout: 4-column grid (md:grid-cols-4) on desktop, stacks on mobile
+- Sections: Certifications (SCI, DSC, WRSA, Fair Trade), Legal (Privacy, Terms, Cookies), Location (Address, Contact), Tax Advisory
+- Border: Top border with white/10 opacity
+- Typography: font-heading for section titles, font-montserrat for links
+- Links: Hover states with color transitions
 
 HERO SECTION
 ------------
-- Full viewport height: h-screen
-- Background: Full-bleed image with black overlay (30% opacity)
-- Content: Centered, max-w-4xl
+- Full viewport height: min-h-screen or min-h-[60vh] md:min-h-[70vh]
+- Background: Full-bleed image with gradient overlay (charcoal/60 to transparent)
+- Content: Centered, max-w-4xl or max-w-5xl
 - Typography: Large headings (5xl to 8xl), light weight
-- Booking Widget: Floating pill-shaped glassmorphism widget at bottom
+- Booking Widget: Floating pill-shaped glassmorphism widget at bottom (homepage only)
+- Scroll indicator: Optional scroll-down indicator
 
 CARDS
 -----
-- Background: Glassmorphism (rgba(35, 31, 32, 0.4) with blur)
-- Border: 1px solid rgba(255, 255, 255, 0.1)
-- Border Radius: 12px
-- Hover: Scale transform, border color change
-- Padding: p-8 md:p-10
+- Background: Glassmorphism (rgba(35, 31, 32, 0.4) with backdrop-blur)
+- Border: 1px solid rgba(255, 255, 255, 0.1) or border-clay/20
+- Border Radius: 12px (rounded-xl)
+- Hover: Scale transform (scale-[1.02]), border color change, transition duration-500 or duration-700
+- Padding: p-6 md:p-8 lg:p-10
+- Luxury card class: .luxury-card with transition-all duration-700 ease-out
 
 BUTTONS
 -------
 - Primary CTA: bg-signal-orange text-canvas-cream (orange button)
 - Secondary: border border-white/30 text-white (outlined)
-- Size: px-8 md:px-10 py-3 md:py-4
-- Typography: font-montserrat text-xs uppercase tracking-[0.2em]
+- Tertiary: border border-clay/50 text-clay hover:bg-clay/10 hover:border-clay
+- Size: px-8 md:px-10 py-3 md:py-4 (standard), px-10 md:px-12 py-4 md:py-5 (large)
+- Typography: font-montserrat text-xs uppercase tracking-[0.2em] font-light
 - Hover: Scale, opacity, or background color change
+- Transition: transition-all duration-500
 
-FOOTER
-------
-- Background: Gradient from espresso to espresso/95
-- Layout: 4-column grid (md:grid-cols-4)
-- Sections: Certifications, Legal, Location, Tax Advisory
-- Border: Top border with white/10 opacity
+BOOKING WIDGET (Homepage)
+--------------------------
+- Location: Floating at bottom of hero section
+- Style: Glassmorphism pill shape with rounded-full
+- Features: Date picker (check-in/check-out), guest selector (1-8), "Go" button
+- Functionality: Links to /reserve page with query parameters
+- Seasonal Notice: "Hunting Season: May - August" message
+- Responsive: Adapts to mobile with stacked layout
+
+TRUST BAR (Below Hero on Homepage)
+-----------------------------------
+- Layout: 4 items with dividers on desktop, stacks on mobile
+- Items: Malaria-Free, Conservation, Luxury, Certified
+- Style: Glassmorphism cards with icons
+- Icons: SVG icons for each trust signal
+- Text: Short descriptions under each icon
 
 ================================================================================
-7. KEY FEATURES
+7. PAGES & ROUTES
 ================================================================================
 
-INTERNATIONALIZATION (i18n)
----------------------------
-- Supported Languages: English, Deutsch (German), Français (French), Afrikaans
-- Language Selector: Dropdown in header with flag emojis
-- Translation System: React Context API with localStorage persistence
+STATIC PAGES
+------------
+
+1. Homepage (app/page.tsx)
+   - Route: /
+   - Type: Client Component ("use client")
+   - Features:
+     * Hero section with booking widget
+     * Trust bar (Malaria-Free, Conservation, Luxury, Certified)
+     * Species showcase (auto-rotating, 4 featured species)
+     * The Cradle of Iron section
+     * The Journey preview (3 stages)
+     * The Guardians section
+     * The Pursuit section
+     * The Connection section
+     * Real Impact section
+     * Field to Fork section
+     * The Culinary Narrative
+     * The Experience section
+     * Begin Your Journey CTA
+   - Species Display: Dynamic from speciesDatabase (Greater Kudu, Cape Buffalo, Gemsbok, Cape Eland)
+   - Images: Homepage-specific images (HP suffix)
+   - Scroll animations: Intersection Observer for fade-in effects
+   - Auto-rotate: Species showcase changes every 4 seconds
+
+2. The Hunt (app/hunt/page.tsx)
+   - Route: /hunt
+   - Type: Client Component ("use client")
+   - Features:
+     * Hero section with tab navigation (sticky)
+     * Tabs: Philosophy, Plains Game, Spiral-Horned, Dangerous Game
+     * Species cards with hunt card images
+     * Category filtering (plains, spiral, dangerous)
+     * Investment pricing display
+     * Species descriptions (concise summaries)
+   - Species Categories:
+     * Plains Game: Wildebeest, Golden Wildebeest, King Wildebeest, Impala, Dapple Impala, White-flanked Impala, Blesbok, Red Hartebeest, Lechwe
+     * Spiral-Horned: Greater Kudu, Cape Eland, Livingstone Eland, Bushbuck
+     * Dangerous Game: Cape Buffalo
+   - Images: Hunt card images for each species
+   - Layout: Sticky tab navigation, responsive grid layout
+
+3. The Journey (app/journey/page.tsx)
+   - Route: /journey
+   - Type: Server Component (default)
+   - Features:
+     * Hero section
+     * Journey stages (3 stages with timeline)
+     * Detailed descriptions of each stage
+     * Image galleries
+     * Progress indicators
+   - Content: Step-by-step journey from arrival to departure
+
+4. Sanctuary (app/sanctuary/page.tsx)
+   - Route: /sanctuary
+   - Type: Server Component (default)
+   - Features:
+     * Accommodation showcase
+     * Luxury amenities
+     * Lodge facilities
+     * Image galleries
+   - Content: Luxury accommodation details
+
+5. Species Guide (app/species/page.tsx)
+   - Route: /species
+   - Type: Client Component ("use client")
+   - Features:
+     * Hero section
+     * Category filter (sticky): All Species, Spiral-Horned, Plains Runners, Desert Specialists, Small Game, Dangerous Game
+     * Species grid (responsive: 1 col mobile, 2 col tablet, 3 col desktop)
+     * Species cards with:
+       - Square aspect ratio images
+       - Species name and nickname
+       - Concise description (150-250 characters)
+       - Investment pricing
+       - "Learn More" link
+     * Modal/Expanded view (optional, currently using Link navigation)
+   - Species Count: 17 total species
+   - Image Loading: Priority for first 3, lazy loading for rest
+   - Performance: Optimized scrolling with lazy loading
+
+6. Species Detail (app/species/[id]/page.tsx)
+   - Route: /species/[id] (dynamic)
+   - Type: Server Component with generateMetadata
+   - Features:
+     * Dynamic metadata generation per species
+     * Hero section with species image
+     * Comprehensive species information:
+       - Biometrics (weight, height, horn length)
+       - Biology (digestive type, feeding guild, habitat)
+       - Morphology (cranial, dentition, skeletal, hoof, special adaptations)
+       - Behavior (social, feeding, defense, reproduction, unique behaviors)
+       - Tracking (track morphology, dimensions, gait, behavioral spoor, strategy, key signs)
+       - Hunting (caliber, shot placement, trophy, meat, difficulty)
+     * Technical/Ballistics sections (for specific species):
+       - Recommended calibers and bullets
+       - Shot placement guides
+       - Trophy judging criteria
+       - Field judging techniques
+       - Record book minimums
+       - Venison quality and culinary applications
+     * Detail images: Habitat, Tracking, Morphology, Behavior, Hunting, Track, Spoor
+     * Image galleries with lazy loading
+     * CTA sections
+   - Species with Technical Sections: Livingstone Eland, Lechwe, King Wildebeest, Golden Wildebeest, White-Flanked Impala, Dapple Impala, Cape Buffalo, Greater Kudu, Gemsbok, Impala, Springbok, Blesbok, Red Hartebeest, Bushbuck, Warthog
+   - Metadata: Dynamic per species with OpenGraph images
+   - Image Maps: Comprehensive mapping for all species images
+
+7. Impact (app/impact/page.tsx)
+   - Route: /impact
+   - Type: Server Component (default)
+   - Features:
+     * Conservation impact statements
+     * Community involvement
+     * Ecological benefits
+     * Real-world impact metrics
+   - Content: Conservation and community impact narrative
+
+8. Trust & Logistics (app/trust/page.tsx)
+   - Route: /trust
+   - Type: Server Component (default)
+   - Features:
+     * Trust signals and certifications
+     * Logistics information
+     * Safety protocols
+     * Professional standards
+   - Content: Trust-building and logistical information
+
+9. Reserve (app/reserve/page.tsx)
+   - Route: /reserve
+   - Type: Server Component (default)
+   - Features:
+     * Booking interface
+     * Reservation form
+     * Availability calendar
+     * Contact information
+   - Content: Reservation and booking functionality
+
+10. Origins (app/origins/page.tsx)
+    - Route: /origins
+    - Type: Server Component (default)
+    - Features:
+      * Historical narrative
+      * Location story
+      * Waterberg Biosphere context
+      * Thabazimbi region information
+    - Content: Origin story and location narrative
+
+PAGE LAYOUTS
+------------
+- Root Layout (app/layout.tsx): Wraps all pages, includes Header and Footer
+- Page-specific layouts: Some pages have dedicated layout.tsx files for metadata
+- Metadata: Each page has unique metadata with title template
+
+DYNAMIC ROUTES
+--------------
+- Species Detail: /species/[id] - 17 dynamic routes (one per species)
+- generateStaticParams: Pre-renders all species pages at build time
+- generateMetadata: Dynamic metadata per species
+
+================================================================================
+8. SPECIES DATABASE
+================================================================================
+
+DATABASE STRUCTURE (lib/speciesData.ts)
+---------------------------------------
+- Total Species: 17
+- Data Structure: TypeScript interface (SpeciesData)
+- Export: speciesDatabase array, getSpeciesById(), getSpeciesByCategory()
+
+SPECIES LIST
+------------
+1. Greater Kudu (kudu) - Spiral-Horned - $3,500
+2. Cape Eland (eland) - Spiral-Horned - $4,200
+3. Livingstone Eland (livingstone-eland) - Spiral-Horned - $4,500
+4. Blue Wildebeest (wildebeest) - Plains - $2,200
+5. Golden Wildebeest (golden-wildebeest) - Plains - $3,000-$4,500
+6. King Wildebeest (king-wildebeest) - Plains - $10,000+
+7. Gemsbok (gemsbok) - Desert - $2,800
+8. Springbok (springbok) - Plains - $800
+9. Impala (impala) - Plains - $800
+10. Dapple Impala (dapple-impala) - Plains - $11,500
+11. White-flanked Impala (white-flanked-impala) - Plains - $2,000
+12. Blesbok (blesbok) - Plains - $1,200
+13. Red Hartebeest (hartebeest) - Plains - $1,500
+14. Bushbuck (bushbuck) - Spiral-Horned - $1,800
+15. Warthog (warthog) - Small - $600
+16. Cape Buffalo (buffalo) - Dangerous - $12,000
+17. Southern Lechwe (lechwe) - Plains - $2,500
+
+CATEGORIES
+----------
+- spiral: Spiral-Horned antelope (Kudu, Eland, Livingstone Eland, Bushbuck)
+- plains: Plains Runners (Wildebeest variants, Impala variants, Blesbok, Hartebeest, Lechwe)
+- desert: Desert Specialists (Gemsbok)
+- small: Small Game (Warthog)
+- dangerous: Dangerous Game (Cape Buffalo)
+
+SPECIES DATA FIELDS
+-------------------
+- id: Unique identifier (kebab-case)
+- name: Full species name
+- scientificName: Latin binomial
+- nickname: Common nickname or epithet
+- category: One of 5 categories
+- investment: Trophy fee (string format)
+- biometrics: Weight (male/female), height, horn length/span, top speed
+- biology: Digestive type, feeding guild, primary forage, muzzle shape, water dependence, habitat
+- morphology: Cranial, dentition, skeletal, hoof (dimensions, shape, distinctive, substrate), special adaptations
+- behavior: Social, feeding, defense, reproduction, unique behaviors
+- tracking: Track morphology, dimensions, gait signature, behavioral spoor, strategy, key signs
+- hunting: Caliber, shot placement, trophy, meat, difficulty
+- description: Concise summary (150-250 characters) for species cards
+- conservationNarrative: Conservation and management information
+
+CARD DESCRIPTIONS
+-----------------
+All species have concise, punchy descriptions (150-250 characters) matching the style:
+- Example: "Often called the 'Clown of the Veld' but conversely 'The Poor Man's Buffalo' for incredible toughness and tenacity. The workhorse of the African plains, engineered for endurance efficiency."
+
+================================================================================
+9. IMAGE SYSTEM
+================================================================================
+
+IMAGE TYPES
+-----------
+1. Main Species Images: Full-body portraits for species pages
+2. Homepage Images: HP suffix (e.g., "Cape Buffalo HP.jpg")
+3. Hunt Card Images: Species cards on hunt page (e.g., "wildebeest-hunt-card.jpg")
+4. Detail Images: Habitat, Tracking, Morphology, Behavior, Hunting, Track, Spoor
+5. Background Images: Hero sections, section backgrounds
+
+IMAGE PATHS
+-----------
+- Location: /public/images/
+- Format: .jpg (most), .png (some legacy)
+- Naming: kebab-case for new images, Title Case for legacy
+- Total Images: 101 files (84 .jpg, 17 .png)
+
+IMAGE OPTIMIZATION
+------------------
+- Component: Next.js Image component (no <img> tags)
+- Format: Automatic WebP conversion
+- Loading: Priority for hero images, lazy loading for below-fold
+- Sizes: Responsive with srcset
+- Alt Text: Descriptive alt text on all images
+- Performance: Lazy loading prevents scroll blocking
+
+IMAGE MAPPING FUNCTIONS
+-----------------------
+- getSpeciesImage(): Maps species IDs to main images (species page)
+- getHuntCardImage(): Maps species IDs to hunt card images (hunt page)
+- getImagePath(): Maps species IDs to homepage images (homepage)
+- getSpeciesImagePath(): Maps species IDs to detail page images
+- getSpeciesDetailImage(): Maps species IDs to detail images (habitat, tracking, etc.)
+
+================================================================================
+10. INTERNATIONALIZATION (i18n)
+================================================================================
+
+SUPPORTED LANGUAGES
+-------------------
+1. English (en) - Default
+2. Deutsch (de) - German
+3. Français (fr) - French
+4. Afrikaans (af)
+
+IMPLEMENTATION
+--------------
+- System: React Context API with localStorage persistence
+- Location: lib/i18n/LanguageProvider.tsx, lib/i18n/translations.ts
+- Provider: LanguageProvider wraps entire app in root layout
+- Hook: useLanguage() hook for accessing translations
 - Auto-detection: Detects browser language on first visit
-- Location: lib/i18n/translations.ts and lib/i18n/LanguageProvider.tsx
+- Persistence: Saves language preference to localStorage
+
+LANGUAGE SELECTOR
+-----------------
+- Location: Header (top right)
+- UI: Dropdown with flag emojis
+- Flags: 🇬🇧 English, 🇩🇪 Deutsch, 🇫🇷 Français, 🇿🇦 Afrikaans
+- Behavior: Click to open dropdown, click outside to close
+
+TRANSLATION STRUCTURE
+---------------------
+- Keys: Organized by page/section (header, hero, trust bar, sections, CTAs, footer)
+- Usage: t('keyName') function call
+- Fallback: English if translation missing
+
+================================================================================
+11. KEY FEATURES
+================================================================================
 
 BOOKING WIDGET
 --------------
-- Location: Floating at bottom of hero section
+- Location: Floating at bottom of hero section (homepage)
 - Features: Date picker (check-in/check-out), guest selector (1-8), "Go" button
 - Style: Glassmorphism pill shape
 - Functionality: Links to /reserve page with query parameters
 - Seasonal Notice: "Hunting Season: May - August" message
+- Responsive: Adapts to mobile layout
 
 RESPONSIVE DESIGN
 -----------------
@@ -221,6 +575,7 @@ RESPONSIVE DESIGN
 - Navigation: Hamburger menu on mobile, dropdown on desktop
 - Images: Responsive with Next.js Image component
 - Typography: Scales from mobile to desktop
+- Grids: Stack to single column on mobile
 
 SCROLL ANIMATIONS
 -----------------
@@ -228,24 +583,31 @@ SCROLL ANIMATIONS
 - Elements fade in as they enter viewport
 - Smooth transitions with opacity and transform
 - Threshold: 0.15 (15% visible)
+- Root margin: "0px 0px -50px 0px"
+- Applied to: All sections with scroll-fade class
 
 INTERACTIVE ELEMENTS
 --------------------
-- Species Showcase: Auto-rotates and responds to hover
+- Species Showcase: Auto-rotates every 4 seconds and responds to hover
 - Journey Timeline: Progress indicator, stage navigation
 - Tab Navigation: Sticky tabs on hunt page
+- Category Filters: Sticky filter bar on species page
 - Dropdown Menus: Language selector, guest picker, date picker
+- Modal Views: Optional expanded species view (currently using Link navigation)
 
-IMAGE OPTIMIZATION
-------------------
-- Next.js Image component with automatic optimization
-- WebP format conversion
-- Lazy loading enabled
-- Responsive sizes with srcset
-- Priority loading for hero images
+PERFORMANCE OPTIMIZATIONS
+-------------------------
+- Image optimization with Next.js (automatic WebP, lazy loading)
+- Font optimization with next/font
+- Code splitting (automatic with Next.js App Router)
+- Lazy loading for images and components
+- Intersection Observer for efficient scroll animations
+- Priority loading for above-fold images
+- Minimal JavaScript bundle size
+- Server Components by default (minimal client-side JavaScript)
 
 ================================================================================
-8. SEASONAL MESSAGING
+12. SEASONAL MESSAGING
 ================================================================================
 
 HUNTING SEASON
@@ -256,20 +618,28 @@ HUNTING SEASON
 - Locations: Booking widget, "The Pursuit" section, "Begin Your Journey" section
 
 ================================================================================
-9. TRUST SIGNALS & BADGES
+13. TRUST SIGNALS & BADGES
 ================================================================================
 
-TRUST BAR (Below Hero)
-----------------------
-- Malaria-Free: Safe for families
-- Conservation: Ethical harvest
-- Luxury: World-class service
-- Certified: Professional guides
+TRUST BAR (Below Hero on Homepage)
+-----------------------------------
+- Items: 4 trust signals
+  1. Malaria-Free - Safe for Families
+  2. Conservation - Ethical Harvest
+  3. Luxury - World-Class Service
+  4. Certified - Professional Guides
 - Style: Glassmorphism cards with icons
-- Layout: 4 items with dividers on desktop
+- Layout: 4 items with dividers on desktop, stacks on mobile
+
+FOOTER CERTIFICATIONS
+---------------------
+- SCI (Safari Club International)
+- DSC (Dallas Safari Club)
+- WRSA (Wildlife Ranching South Africa)
+- Fair Trade
 
 ================================================================================
-10. TECHNICAL STACK
+14. TECHNICAL STACK
 ================================================================================
 
 FRAMEWORK & LIBRARIES
@@ -277,7 +647,7 @@ FRAMEWORK & LIBRARIES
 - Next.js 16.0.10 (React framework with App Router)
 - TypeScript (strict type safety)
 - Tailwind CSS (utility-first styling)
-- React Context API (state management)
+- React Context API (state management for i18n)
 - Intersection Observer API (scroll animations)
 - React Strict Mode: Enabled
 
@@ -285,38 +655,25 @@ FONTS
 -----
 - Google Fonts: Playfair Display, Inter, Montserrat
 - Next.js Font Optimization: Automatic font loading optimization
+- Font Variables: CSS custom properties for font families
 
 IMAGE HANDLING
--------------
-- Next.js Image component
-- Automatic image optimization
-- WebP conversion
-- Responsive images
+--------------
+- Next.js Image component (automatic optimization)
+- WebP conversion (automatic)
+- Responsive images with srcset
+- Lazy loading (automatic for below-fold)
+- Priority loading (for hero images)
+
+BUILD SYSTEM
+------------
+- Build Command: npm run build
+- Output: Static site generation (SSG) for most pages
+- Dynamic Routes: Pre-rendered at build time (generateStaticParams)
+- Build Status: ✅ Passing (0 errors)
 
 ================================================================================
-11. ACCESSIBILITY
-================================================================================
-
-- WCAG AA compliant color contrast ratios
-- Semantic HTML structure
-- ARIA labels on interactive elements
-- Keyboard navigation support
-- Screen reader friendly
-- Focus states on all interactive elements
-
-================================================================================
-12. PERFORMANCE OPTIMIZATIONS
-================================================================================
-
-- Image optimization with Next.js
-- Font optimization with next/font
-- Code splitting (automatic with Next.js)
-- Lazy loading for images and components
-- Intersection Observer for efficient scroll animations
-- Minimal JavaScript bundle size
-
-================================================================================
-13. SEO IMPLEMENTATION (Search Engine Optimization)
+15. SEO IMPLEMENTATION
 ================================================================================
 
 METADATA ARCHITECTURE
@@ -324,10 +681,10 @@ METADATA ARCHITECTURE
 - Root Layout Metadata (app/layout.tsx):
   * metadataBase: Absolute URL with environment variable support
   * Title Template: '%s | Vaalpenskraal Game Reserve'
-  * Complete OpenGraph configuration (title, description, type, siteName, locale, url)
+  * Complete OpenGraph configuration
   * Twitter Card metadata (summary_large_image)
   * Robots meta tags with Googlebot directives
-  * Keywords meta tags for enhanced discoverability
+  * Keywords meta tags
 
 - Page-Level Metadata:
   * All pages have unique titles and descriptions
@@ -339,7 +696,7 @@ TECHNICAL SEO ASSETS
 --------------------
 - Sitemap (app/sitemap.ts):
   * Dynamic generation with all static and dynamic pages
-  * Includes 9 static pages + 9 species detail pages
+  * Includes 9 static pages + 17 species detail pages = 26 total pages
   * Absolute URLs with proper priorities and change frequencies
   * lastModified timestamps
 
@@ -370,7 +727,7 @@ IMAGE SEO
 - Responsive images with proper sizing
 
 PERFORMANCE & CORE WEB VITALS
-------------------------------
+-----------------------------
 - Hero images use priority prop for LCP optimization
 - Server Components by default (minimal client-side JavaScript)
 - Client components only where necessary (leaf pattern)
@@ -392,9 +749,295 @@ SEO STATUS
 - Status: ✅ Production Ready
 - Build: ✅ Passing (0 errors)
 - All critical SEO requirements met
-- See SEO_AUDIT.md for complete audit report
+
+================================================================================
+16. ACCESSIBILITY
+================================================================================
+
+WCAG COMPLIANCE
+---------------
+- Color contrast: WCAG AA compliant (4.5:1 for text)
+- Semantic HTML structure
+- ARIA labels on interactive elements
+- Keyboard navigation support
+- Screen reader friendly
+- Focus states on all interactive elements
+
+================================================================================
+17. FILE STRUCTURE
+================================================================================
+
+PROJECT ROOT
+------------
+- app/ - Next.js App Router pages and layouts
+- components/ - Reusable React components
+- lib/ - Utility libraries and data
+- public/ - Static assets (images)
+- knowledge/ - Documentation and research files
+  * image_prompts/ - AI image generation prompts (organized folder)
+
+APP DIRECTORY STRUCTURE
+-----------------------
+app/
+  ├── layout.tsx (Root layout with Header/Footer)
+  ├── page.tsx (Homepage)
+  ├── globals.css (Global styles)
+  ├── robots.ts (Robots.txt generator)
+  ├── sitemap.ts (Sitemap generator)
+  ├── hunt/
+  │   ├── layout.tsx
+  │   └── page.tsx
+  ├── journey/
+  │   ├── layout.tsx
+  │   └── page.tsx
+  ├── sanctuary/
+  │   └── page.tsx
+  ├── species/
+  │   ├── layout.tsx
+  │   ├── page.tsx (Species listing)
+  │   └── [id]/
+  │       └── page.tsx (Species detail - dynamic)
+  ├── impact/
+  │   ├── layout.tsx
+  │   └── page.tsx
+  ├── trust/
+  │   └── page.tsx
+  ├── reserve/
+  │   ├── layout.tsx
+  │   └── page.tsx
+  └── origins/
+      ├── layout.tsx
+      └── page.tsx
+
+COMPONENTS DIRECTORY
+--------------------
+components/
+  └── layout/
+      ├── Header.tsx (Navigation, language selector, CTA)
+      └── Footer.tsx (Certifications, legal, location, tax advisory)
+
+LIB DIRECTORY
+-------------
+lib/
+  ├── i18n/
+  │   ├── LanguageProvider.tsx (i18n context provider)
+  │   └── translations.ts (Translation strings)
+  ├── seo.ts (SEO utility functions)
+  └── speciesData.ts (Species database - 17 species)
+
+PUBLIC DIRECTORY
+----------------
+public/
+  └── images/
+      ├── [101 image files]
+      ├── Main species images (.jpg, .png)
+      ├── Homepage images (HP suffix)
+      ├── Hunt card images (hunt-card suffix)
+      └── Detail images (habitat, tracking, morphology, behavior, hunting, track, spoor)
+
+KNOWLEDGE DIRECTORY
+-------------------
+knowledge/
+  ├── image_prompts/ (Organized folder)
+  │   ├── [17 species detail prompt files]
+  │   ├── buffalo_visual_style_guide.json
+  │   └── new_species_ai_prompts.md
+  ├── [Research documents - .docx files]
+  ├── missing_images_audit.md
+  └── MISSING_IMAGES_SUMMARY.md
+
+================================================================================
+18. CUSTOM CSS UTILITIES
+================================================================================
+
+UTILITY CLASSES (globals.css)
+------------------------------
+- .cinematic-hero - Full-screen hero with padding-top for header
+- .luxury-card - Card with smooth hover transitions
+- .broken-grid - Flexible auto-fit grid layout
+- .editorial-text - Styled body text with proper spacing
+- .text-balance - Text wrap balance utility
+- .white-space-luxury - Large vertical padding utility
+- .no-ui - Centered content container
+- .page-container - Page container with top padding for header
+- .scroll-fade - Scroll animation utility (opacity + transform)
+- .animate-in - Animation trigger class
+- .animate-fade-in - Fade-in animation
+- .animate-float - Floating animation
+
+ANIMATIONS
+----------
+- fade-in-up: Keyframe animation for scroll fade
+- fade-in: Simple fade-in animation
+- float: Floating animation for decorative elements
+
+================================================================================
+19. STATE MANAGEMENT
+================================================================================
+
+CLIENT STATE
+------------
+- React useState hooks for component-level state
+- Language state: Managed by LanguageProvider (Context API)
+- UI state: Menu open/close, dropdowns, active tabs, selected categories
+- Species showcase: Active species index for auto-rotation
+
+PERSISTENCE
+-----------
+- Language preference: localStorage (via LanguageProvider)
+- No other persistent state (stateless where possible)
+
+================================================================================
+20. NAVIGATION STRUCTURE
+================================================================================
+
+HEADER NAVIGATION
+-----------------
+1. Home (/)
+2. The Hunt (/hunt)
+3. The Journey (/journey)
+4. Sanctuary (/sanctuary)
+5. Species (/species)
+6. Impact (/impact)
+7. Trust & Logistics (/trust)
+8. Reserve (/reserve)
+
+FOOTER LINKS
+------------
+- Legal: Privacy, Terms, Cookies
+- Location: Address, Contact information
+- Tax Advisory: Tax information
+
+INTERNAL LINKING
+----------------
+- All internal links use Next.js <Link /> component
+- No <a href> tags (SEO best practice)
+- Proper prefetching enabled
+
+================================================================================
+21. CONTENT MANAGEMENT
+================================================================================
+
+SPECIES DATA
+------------
+- Centralized: lib/speciesData.ts
+- Single source of truth for all species information
+- Used across: Homepage, Species page, Hunt page, Species detail pages
+- Updates: Modify speciesData.ts to update all pages
+
+TRANSLATIONS
+------------
+- Centralized: lib/i18n/translations.ts
+- All translatable strings in one file
+- Organized by page/section
+- Easy to add new languages
+
+METADATA
+--------
+- Page-level: Each page has its own metadata export
+- Dynamic: Species pages use generateMetadata function
+- SEO: All pages optimized with proper titles, descriptions, OG tags
+
+================================================================================
+22. PERFORMANCE METRICS
+================================================================================
+
+BUILD PERFORMANCE
+-----------------
+- Build Time: ~8-15 seconds (varies by system)
+- TypeScript Compilation: ~15-30 seconds
+- Page Generation: ~2-4 seconds (30 pages)
+- Total Build: ~30-50 seconds
+
+RUNTIME PERFORMANCE
+--------------------
+- Image Loading: Lazy loading prevents scroll blocking
+- Scroll Performance: Optimized with Intersection Observer
+- First Load: Priority images load immediately
+- Subsequent Navigation: Fast client-side navigation (Next.js)
+
+OPTIMIZATION TECHNIQUES
+------------------------
+- Image lazy loading (loading="lazy" for below-fold)
+- Priority loading (priority prop for hero images)
+- Code splitting (automatic with Next.js)
+- Font optimization (next/font)
+- Server Components (minimal JavaScript)
+
+================================================================================
+23. DEPLOYMENT & ENVIRONMENT
+================================================================================
+
+ENVIRONMENT VARIABLES
+---------------------
+- NEXT_PUBLIC_BASE_URL: Base URL for absolute links and metadata
+- Used in: SEO utilities, canonical URLs, OpenGraph images
+
+BUILD OUTPUT
+------------
+- Static pages: Pre-rendered at build time
+- Dynamic routes: Pre-rendered via generateStaticParams
+- Output: Optimized production build
+
+GIT REPOSITORY
+--------------
+- Repository: https://github.com/Franksmittt/vpk.git
+- Branch: master
+- Status: Active development
+
+================================================================================
+24. CONTENT FEATURES
+================================================================================
+
+SPECIES INFORMATION DEPTH
+--------------------------
+- Basic Info: Name, scientific name, nickname, category, investment
+- Biometrics: Weight, height, horn measurements, speed
+- Biology: Digestive system, feeding habits, water dependence, habitat
+- Morphology: Detailed physical characteristics, adaptations
+- Behavior: Social structure, feeding, defense, reproduction
+- Tracking: Spoor identification, tracking strategies
+- Hunting: Caliber recommendations, shot placement, trophy standards
+- Technical Guides: Comprehensive ballistics and hunting guides (15 species)
+- Venison: Meat characteristics, butchery, culinary applications
+- Conservation: Management and conservation narratives
+
+TEXT STYLE
+----------
+- Humanized: No em dashes (—) or quotation marks (") in body text
+- Natural language flow
+- Concise species card descriptions (150-250 characters)
+- Detailed technical content on detail pages
+
+================================================================================
+25. IMAGE GENERATION SYSTEM
+================================================================================
+
+AI IMAGE PROMPTS
+----------------
+- Location: knowledge/image_prompts/ (organized folder)
+- Files: 17 species detail prompt files + style guide
+- Format: Detailed markdown files with comprehensive prompts
+- Coverage: Habitat, Tracking, Morphology, Behavior, Hunting, Track, Spoor images
+- Style Guide: buffalo_visual_style_guide.json for consistent aesthetic
+
+PROMPT STRUCTURE
+----------------
+- Detailed environmental context (Waterberg/Thabazimbi specific)
+- Accurate track dimensions (to prevent exaggerated sizes)
+- Lighting specifications (golden hour, 4500K-5500K)
+- Camera settings (telephoto, depth of field)
+- Style guidelines (National Geographic, Iron Mountain aesthetic)
+- Avoid lists (no blood, gore, clichéd safari aesthetic)
 
 ================================================================================
 END OF DOCUMENT
 ================================================================================
 
+Last Updated: January 2026
+Project Status: ✅ Production Ready
+Build Status: ✅ Passing (0 errors)
+Total Pages: 26 (9 static + 17 dynamic species pages)
+Total Species: 17
+Total Images: 101 files
+Languages: 4 (English, Deutsch, Français, Afrikaans)
