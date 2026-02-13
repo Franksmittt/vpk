@@ -1313,7 +1313,7 @@ export default async function SpeciesDetailPage({
                     Expert Guide: Shot Placement
                   </h3>
                   <p className="text-silver/80 font-body text-sm md:text-base leading-relaxed mb-4 font-light">
-                    The lechwe's unique posture—with rear end higher than shoulders—can lead to errors in shot placement if hunter is used to more "level" antelopes.
+                    The lechwe's unique posture (rear end higher than shoulders) can lead to errors in shot placement if the hunter is used to more level antelopes.
                   </p>
                   
                   <div className="space-y-4">
@@ -3873,7 +3873,7 @@ export default async function SpeciesDetailPage({
                     <div className="border-l-2 border-clay/40 pl-4">
                       <h4 className="text-clay font-heading text-base mb-2 font-light">Frontal Shot</h4>
                       <p className="text-silver/70 font-body text-sm leading-relaxed font-light">
-                        Generally discouraged for clients. The target area—the "teacup" sized opening into the chest cavity above the brisket—is small. A slight deviation hits the heavy shoulder bone or the neck meat, resulting in a wounded animal that can run for miles.
+                        Generally discouraged for clients. The target area, a teacup-sized opening into the chest cavity above the brisket, is small. A slight deviation hits the heavy shoulder bone or the neck meat, resulting in a wounded animal that can run for miles.
                       </p>
                     </div>
                   </div>
@@ -4807,7 +4807,7 @@ export default async function SpeciesDetailPage({
               Ballistics & Technical Guide
             </h2>
             <p className="text-silver/60 font-body text-sm md:text-base mb-12 max-w-2xl">
-              Hunting Springbok is often a hunter's introduction to the <span className="text-clay font-medium">"long range" game of African safaris</span>. The terrain—vast, flat pans or undulating Karoo scrub—offers zero cover, necessitating distinct tactical approaches.
+              Hunting Springbok is often a hunter's introduction to the <span className="text-clay font-medium">"long range" game of African safaris</span>. The terrain, vast flat pans or undulating Karoo scrub, offers zero cover and calls for distinct tactical approaches.
             </p>
 
             {/* Recommended Calibers */}
@@ -5180,7 +5180,7 @@ export default async function SpeciesDetailPage({
               Ballistics & Technical Guide
             </h2>
             <p className="text-silver/60 font-body text-sm md:text-base mb-12 max-w-2xl">
-              Hunting the Blesbok is often the entry point for novice hunters in Africa, yet it remains a staple challenge for experienced sportsmen due to the animal's <span className="text-clay font-medium">keen senses and open habitat</span>. The Blesbok is deceptively tough—often described as "tenacious" or "hard to put down."
+              Hunting the Blesbok is often the entry point for novice hunters in Africa, yet it remains a staple challenge for experienced sportsmen due to the animal's <span className="text-clay font-medium">keen senses and open habitat</span>. The Blesbok is deceptively tough. Many describe it as tenacious or hard to put down.
             </p>
 
             {/* Recommended Calibers */}
@@ -5349,7 +5349,7 @@ export default async function SpeciesDetailPage({
                         Only recommended for experienced marksmen. Aim for the "soft spot" at the base of the neck, where it joins the chest.
                       </p>
                       <p className="text-silver/70 font-body text-xs leading-relaxed font-light mt-2">
-                        <strong className="text-clay">Warning:</strong> Ensure the animal is not dipping its head to nod (bot fly irritation) when firing. A Blesbok that is nodding is a difficult target—the head movement can obscure the vital triangle or cause the animal to jerk at the moment of the trigger pull.
+                        <strong className="text-clay">Warning:</strong> Ensure the animal is not dipping its head to nod (bot fly irritation) when firing. A Blesbok that is nodding is a difficult target. The head movement can obscure the vital triangle or cause the animal to jerk at the moment of the trigger pull.
                       </p>
                     </div>
                   </div>
@@ -5495,7 +5495,7 @@ export default async function SpeciesDetailPage({
                   <h4 className="text-cream font-heading text-base mb-4 font-light">Meat Characteristics</h4>
                   <div className="border border-clay/10 p-4 bg-charcoal/30 mb-4">
                     <p className="text-silver/80 font-body text-sm leading-relaxed font-light mb-3">
-                      <strong className="text-cream">Flavor Profile:</strong> Deep red, fine-grained, and extremely lean. Has distinctive gamey flavor—often described as "herby" or aromatic due to the essential oils in Karoo bushes and sweet grasses they consume.
+                      <strong className="text-cream">Flavor Profile:</strong> Deep red, fine-grained, and extremely lean. Has a distinctive gamey flavor, often herby or aromatic from the essential oils in Karoo bushes and the sweet grasses they consume.
                     </p>
                     <p className="text-silver/70 font-body text-xs leading-relaxed font-light mb-3">
                       <strong className="text-cream">Fat:</strong> The fat is yellow. Unlike beef fat, game fat has a high melting point and can coat the palate unpleasantly. It is also prone to going rancid quickly. Standard practice to trim all visible yellow fat from the carcass during processing.
@@ -5567,7 +5567,7 @@ export default async function SpeciesDetailPage({
               Ballistics & Technical Guide
             </h2>
             <p className="text-silver/60 font-body text-sm md:text-base mb-12 max-w-2xl">
-              Hunting the Red Hartebeest is a classic African plains game experience. It challenges the hunter's ability to spot game, execute a stalk across open terrain, and deliver a precision shot at extended ranges. The Red Hartebeest has a reputation for being <span className="text-clay font-medium">"tough"</span>—the nickname "Tough Ox" is well-earned.
+              Hunting the Red Hartebeest is a classic African plains game experience. It challenges the hunter's ability to spot game, execute a stalk across open terrain, and deliver a precision shot at extended ranges. The Red Hartebeest has a reputation for being <span className="text-clay font-medium">tough</span>. The nickname Tough Ox is well-earned.
             </p>
 
             {/* Recommended Calibers */}
@@ -5873,7 +5873,7 @@ export default async function SpeciesDetailPage({
               Ballistics & Technical Guide
             </h2>
             <p className="text-silver/60 font-body text-sm md:text-base mb-12 max-w-2xl">
-              Hunting bushbuck is often described as a game of patience and observation, akin to hunting whitetail deer in the US or Roe deer in Europe, but with a <span className="text-clay font-medium">dangerous twist</span>. The bushbuck has a legendary reputation for aggression—earning it the Afrikaans moniker "Bosbok"—and is widely regarded as the most dangerous of the medium-sized antelopes.
+              Hunting bushbuck is often described as a game of patience and observation, akin to hunting whitetail deer in the US or Roe deer in Europe, but with a <span className="text-clay font-medium">dangerous twist</span>. The bushbuck has a legendary reputation for aggression and earns the Afrikaans moniker Bosbok. It is widely regarded as the most dangerous of the medium-sized antelopes.
             </p>
 
             {/* Recommended Calibers */}
@@ -6057,7 +6057,7 @@ export default async function SpeciesDetailPage({
                     <div className="border-l-2 border-red-500/40 pl-4 bg-red-500/10 p-3 rounded">
                       <h4 className="text-red-400 font-heading text-base mb-2 font-light">WARNING: Gut-Shot = Safety Hazard</h4>
                       <p className="text-silver/70 font-body text-sm leading-relaxed font-light">
-                        Precision is key. A gut-shot bushbuck will charge. The attack is swift—a low lunge aimed at the groin or legs, using the sharp, dagger-like horns with devastating effect.
+                        Precision is key. A gut-shot bushbuck will charge. The attack is swift: a low lunge aimed at the groin or legs, using the sharp, dagger-like horns with devastating effect.
                       </p>
                     </div>
                   </div>
@@ -6084,7 +6084,7 @@ export default async function SpeciesDetailPage({
                   <div>
                     <h4 className="text-cream font-heading text-base mb-3 font-light">The 14-Inch Goal</h4>
                     <p className="text-silver/80 font-body text-sm leading-relaxed font-light">
-                      If the horns project straight up and appear to be <strong className="text-clay">twice the length of the ear</strong>, the ram is likely in the 13-14 inch class—a solid trophy.
+                      If the horns project straight up and appear to be <strong className="text-clay">twice the length of the ear</strong>, the ram is likely in the 13-14 inch class, a solid trophy.
                     </p>
                   </div>
                   <div>
@@ -6116,7 +6116,7 @@ export default async function SpeciesDetailPage({
                   <div>
                     <h4 className="text-cream font-heading text-base mb-3 font-light">Coat Color</h4>
                     <p className="text-silver/80 font-body text-sm leading-relaxed font-light">
-                      In Southern Africa, a <strong className="text-clay">jet-black coat is the surest sign of a fully mature ram</strong>. A red ram with long horns is likely a younger animal with great genetic potential—leaving him for another year might produce a record.
+                      In Southern Africa, a <strong className="text-clay">jet-black coat is the surest sign of a fully mature ram</strong>. A red ram with long horns is likely a younger animal with great genetic potential. Leaving him for another year might produce a record.
                     </p>
                   </div>
                 </div>
@@ -6248,7 +6248,7 @@ export default async function SpeciesDetailPage({
               Ballistics & Technical Guide
             </h2>
             <p className="text-silver/60 font-body text-sm md:text-base mb-12 max-w-2xl">
-              Warthog hunting is accessible and exciting, often conducted as a "walk-and-stalk" or from a blind over water. The warthog is <span className="text-clay font-medium">deceptively tough</span>—the phrase "pound for pound, the toughest animal in Africa" is frequently applied to them.
+              Warthog hunting is accessible and exciting, often conducted as a "walk-and-stalk" or from a blind over water. The warthog is <span className="text-clay font-medium">deceptively tough</span>. Pound for pound, it is often called the toughest animal in Africa.
             </p>
 
             {/* Recommended Calibers */}
@@ -6296,7 +6296,7 @@ export default async function SpeciesDetailPage({
                           <span className="text-clay font-medium">9.3x62 Mauser</span>
                         </td>
                         <td className="py-4 pr-6">286 gr</td>
-                        <td className="py-4">For hunting in thick scrub. Heavy bullets deflect less on twigs and deliver massive knockdown power, anchoring the animal instantly—crucial when hunting near burrows.</td>
+                        <td className="py-4">For hunting in thick scrub. Heavy bullets deflect less on twigs and deliver massive knockdown power, anchoring the animal instantly. That is crucial when hunting near burrows.</td>
                       </tr>
                       <tr>
                         <td className="py-4 pr-6">
